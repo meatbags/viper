@@ -85,26 +85,25 @@ class App {
       const x = e.x + e.factor * cosa * dist;
       const y = e.y + e.factor * sina * dist;
       const rad = e.width * (1 - e.t);
-      this.ctx.beginPath();
-      this.ctx.arc(x, y, rad * 0.8, 0, Math.PI * 2, false);
-      this.ctx.fill();
+      //this.ctx.beginPath();
+      //this.ctx.arc(x, y, rad * 0.8, 0, Math.PI * 2, false);
+      //this.ctx.fill();
 
       // add segment position
       segments.push([x + cosa * rad, y + sina * rad, x - cosa * rad, y - sina * rad]);
     }
 
     // fill between segments
+    this.ctx.fillStyle = '#f00';
+    this.ctx.beginPath();
+    this.ctx.moveTo(segments[0][0], segments[0][1]);
     for (var i=1, lim=segments.length; i<lim; ++i) {
-      const a = segments[i-1];
-      const b = segments[i];
-      this.ctx.beginPath();
-      this.ctx.moveTo(a[0], a[1]);
-      this.ctx.lineTo(a[2], a[3]);
-      this.ctx.lineTo(b[2], b[3]);
-      this.ctx.lineTo(b[0], b[1]);
-      this.ctx.fill();
-      this.ctx.stroke();
+      this.ctx.lineTo(segments[i][0], segments[i][1]);
     }
+    for (var i=segments.length-2, lim=-1; i>lim; --i) {
+      this.ctx.lineTo(segments[i][2], segments[i][3]);
+    }
+    this.ctx.fill();
   }
 
   loop() {
