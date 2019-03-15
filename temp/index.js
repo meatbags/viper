@@ -7,7 +7,7 @@ class App {
     this.ctx = this.cvs.getContext('2d');
     this.cvs.width = window.innerWidth;
     this.cvs.height = window.innerHeight;
-    this.mouse = {x: 0, y: 0, tween: {x: 0, y: 0, radius: 70}};
+    this.mouse = {x: 0, y: 0, tween: {x: 0, y: 0, radius: 80}};
     this.time = {
       now: (new Date()).getTime(),
       delta: 0,
@@ -20,7 +20,7 @@ class App {
       active: false,
       age: 0,
     };
-    const len = 60;
+    const len = 80;
     const radius = 2.5;
     const width = 8;
     for (var i=0; i<len; i++) {
@@ -111,8 +111,12 @@ class App {
 
   draw() {
     this.ctx.clearRect(0, 0, this.cvs.width, this.cvs.height);
+    this.ctx.fillStyle = '#000';
+    this.ctx.strokeStyle = '#000';
+
+    // mouse
     this.ctx.beginPath();
-    this.ctx.arc(this.mouse.x, this.mouse.y, this.mouse.radius, 0, Math.PI * 2, false);
+    this.ctx.arc(this.mouse.x, this.mouse.y, 5, 0, Math.PI * 2, false);
     this.ctx.stroke();
 
     // calculate snake segment position and draw
@@ -131,8 +135,6 @@ class App {
     }
 
     // fill between segments
-    this.ctx.fillStyle = '#f00';
-    this.ctx.strokeStyle = '#f00';
     this.ctx.beginPath();
     this.ctx.moveTo(segments[0][0], segments[0][1]);
     for (var i=1, lim=segments.length; i<lim; ++i) {
