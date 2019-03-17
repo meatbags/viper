@@ -3,50 +3,57 @@
 class App {
   constructor() {
     // init
-    this.cvs = document.querySelector('#canvas');
-    this.ctx = this.cvs.getContext('2d');
-    this.cvs.width = window.innerWidth;
-    this.cvs.height = window.innerHeight;
-    this.mouse = {x: 0, y: 0, tween: {x: 0, y: 0, radius: 80}};
-    this.time = {
-      now: (new Date()).getTime(),
-      delta: 0,
-    };
+    this.cvs = document.querySelector('#canvas-snake');
 
-    // create snake
-    this.snake = [];
-    this.snake.phase = 0;
-    this.snake.tongue = {
-      active: false,
-      age: 0,
-    };
-    const len = 80;
-    const radius = 2.5;
-    const width = 8;
-    for (var i=0; i<len; i++) {
-      const t = i / len;
-      const f = t <= 0.5 ? t * 2 : 1 - (t - 0.5) * 2;
-      this.snake.push({x: 0, y: 0, radius: radius, width: width, t:t, factor:f, angle: 0});
+    if (this.cvs) {
+      this.ctx = this.cvs.getContext('2d');
+      this.cvs.width = window.innerWidth;
+      this.cvs.height = window.innerHeight;
+      this.mouse = {x: 0, y: window.innerHeight / 2, tween: {x: 0, y: window.innerHeight / 2, radius: 80}};
+      this.time = {
+        now: (new Date()).getTime(),
+        delta: 0,
+      };
+
+      // create snake
+      this.snake = [];
+      this.snake.phase = 0;
+      this.snake.tongue = {
+        active: false,
+        age: 0,
+      };
+      const len = 80;
+      const radius = 2.5;
+      const width = 8;
+      let x = -100;
+      let y = window.innerHeight / 2;
+      for (var i=0; i<len; i++) {
+        const t = i / len;
+        let f = t <= 0.5 ? t * 2 : 1 - (t - 0.5) * 2;
+        f = f + (f - f * f);
+        x -= radius * 2;
+        this.snake.push({x: x, y: y, radius: radius, width: width, t:t, factor:f, angle: -Math.PI / 2});
+      }
+      this.snake.head = {
+        p1: {x: -1, y: -width},
+        cp1: {x: width * 0.75, y: -width * 2},
+        cp2: {x: width * 4, y: -width},
+        p2: {x: width * 4, y: 0},
+        cp3: {x: width * 4, y: width},
+        cp4: {x: width * 0.75, y: width * 2},
+        p3: {x: -1, y: width},
+        // tongue
+        p4: {x: width * 5, y: 0},
+        p5: {x: width * 5.5, y: -width/3},
+        p6: {x: width * 5.5, y: width/3}
+      };
+
+      // bind events
+      window.addEventListener('mousemove', e => { this.onMouseMove(e); });
+
+      // run
+      this.loop();
     }
-    this.snake.head = {
-      p1: {x: -1, y: -width},
-      cp1: {x: width * 0.75, y: -width * 2},
-      cp2: {x: width * 4, y: -width},
-      p2: {x: width * 4, y: 0},
-      cp3: {x: width * 4, y: width},
-      cp4: {x: width * 0.75, y: width * 2},
-      p3: {x: -1, y: width},
-      // tongue
-      p4: {x: width * 5, y: 0},
-      p5: {x: width * 5.5, y: -width/3},
-      p6: {x: width * 5.5, y: width/3}
-    };
-
-    // bind events
-    window.addEventListener('mousemove', e => { this.onMouseMove(e); });
-
-    // run
-    this.loop();
   }
 
   onMouseMove(evt) {
@@ -72,8 +79,8 @@ class App {
 
   update(delta) {
     // update mouse
-    this.mouse.tween.x += (this.mouse.x - this.mouse.tween.x) * 0.15;
-    this.mouse.tween.y += (this.mouse.y - this.mouse.tween.y) * 0.15;
+    this.mouse.tween.x += (this.mouse.x - this.mouse.tween.x) * 0.1;
+    this.mouse.tween.y += (this.mouse.y - this.mouse.tween.y) * 0.1;
 
     // increment snake
     this.snake.phase += 0.05;
@@ -115,9 +122,9 @@ class App {
     this.ctx.strokeStyle = '#000';
 
     // mouse
-    this.ctx.beginPath();
-    this.ctx.arc(this.mouse.x, this.mouse.y, 5, 0, Math.PI * 2, false);
-    this.ctx.stroke();
+    //this.ctx.beginPath();
+    //this.ctx.arc(this.mouse.x, this.mouse.y, 5, 0, Math.PI * 2, false);
+    //this.ctx.stroke();
 
     // calculate snake segment position and draw
     const segments = [];
