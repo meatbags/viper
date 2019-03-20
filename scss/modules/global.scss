@@ -1,3 +1,15 @@
 div, * {
   box-sizing: border-box;
 }
+
+body {
+  font-family: $fontStack;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+  color: $colour;
+}
+
+.wrapper {
+  
+}

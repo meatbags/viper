@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- website by xavierburrow.com -->
 <head>
   <title>{{ page_title }}</title>
   <meta charset="utf-8">
@@ -6,11 +7,24 @@
   <meta name="description" content="{{ page_description | escape }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  {{ content_for_header }} <!-- Header hook for plugins -->
-  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'application.js' | asset_url | script_tag }}
+  <style type='text/css'>
+    @font-face {
+      font-family: 'Encient';
+      src: url('./EncientGermanGothic.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'MyriadPro';
+      src: url('./MyriadPro-Light.otf') format('opentype');
+    }
+  </style>
+  {{ content_for_header }} <!-- plugins -->
+  {{ 'lilithviper.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'lilithviper.min.js' | asset_url | script_tag }}
 </head>
 <body>
+  <div class='wrapper'>
+    LILITH VIPER !
+  </div>
 
   {% for link in linklists.main-menu.links %}
     {% assign child_list_handle = link.title | handleize %}
