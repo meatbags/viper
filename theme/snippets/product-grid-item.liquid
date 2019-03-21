@@ -1,0 +1,11 @@
+<div class='grid__item {{ productClass }}'>
+  <a href='{{ product.url }}'>
+    <img src='{{ product.featured_image.src | img_url: 'grande'}}' alt='{{ product.title }}'>
+    <div class='grid__item-overlay'>
+      <div class='grid__item-text'>
+        <div class='grid__item-title'>{{ product.title }}</div>
+        <div class='grid__item-price'>{{ product.price | money_without_trailing_zeros }}</div>
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,19 @@
+{% assign className = 'nav' %}
+{% unless template == 'index' or template == 'page.contact' or template == 'page.about' %}
+  {% assign className = 'nav nav--alt' %}
+  {% unless template == 'page.shop' or template == 'collection' or template == 'list-collections' %}
+    {% assign className = 'nav nav--hide' %}
+  {% endunless %}
+{% endunless %}
+<div class='{{className}}'>
+  {% unless template == 'index' %}
+    <div class='nav__title'><a href='/'>Lilith Viper</a></div>
+  {% endunless %}
+  <div class='nav__item'><a href="/pages/shop">Shop</a></div>
+  <div class='nav__item'><a href="/pages/about">About</a></div>
+  <div class='nav__item'><a href="/collections">Collections</a></div>
+  <div class='nav__item'><a href="/pages/contact">Contact</a></div>
+  {% unless cart.item_count == 0 %}
+    <div class='nav__item'><a href='/cart'>Bag ({{ cart.item_count }})</a></div>
+  {% endunless %}
+</div>

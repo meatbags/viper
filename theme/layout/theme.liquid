@@ -16,13 +16,17 @@
   {% if template == 'index' %}
     <div class='loading-screen'></div>
     <div class='landing-page'>
-      LANDING PAGE !
+      {{ 'LilithViperVLogo.png' | file_url | img_tag }}
     </div>
   {% endif %}
+
+  {% include 'nav' %}
 
   <div class='wrapper'>
     {{ content_for_layout }}
   </div>
+
+  {% include 'footer' %}  
 
   {% comment %}
   {% for link in linklists.main-menu.links %}

@@ -6,5 +6,12 @@
     "theme_author": "Xavier Burrow",
     "theme_documentation_url": "https://github.com/meatbags/viper",
     "theme_support_url": "https://github.com/meatbags/viper"
+  }, {
+    "name": "Settings",
+    "settings": [{
+      "type": "image_picker",
+      "id": "index_image",
+      "label": "Index Image"
+    }]
   }
 ]

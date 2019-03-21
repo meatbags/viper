@@ -1,9 +1,0 @@
-<div class='nav'>
-  <div class='nav__item'><a href="/pages/shop">Shop</a></div>
-  <div class='nav__item'><a href="/pages/about">About</a></div>
-  <div class='nav__item'><a href="/collections">Collections</a></div>
-  <div class='nav__item'><a href="/pages/contact">Contact</a></div>
-  {% unless cart.item_count == 0 %}
-    <div class='nav__item'><a href='/cart'>Bag ({{ cart.item_count }})</a></div>
-  {% endunless %}
-</div>

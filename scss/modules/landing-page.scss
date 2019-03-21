@@ -1,3 +1,8 @@
+@keyframes logo {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .landing-page {
   position: fixed;
   top: 0;
@@ -12,4 +17,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    height: 50vh;
+    width: auto;
+    object-fit: contain;
+    animation-name: logo;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
 }
