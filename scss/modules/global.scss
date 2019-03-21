@@ -8,8 +8,15 @@ body {
   line-height: $lineHeight;
   letter-spacing: $letterSpacing;
   color: $colour;
+  background: $colourBackground;
 }
 
 .wrapper {
-  
+  width: 100vw;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

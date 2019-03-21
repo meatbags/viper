@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!-- website by xavierburrow.com -->
 <head>
   <title>{{ page_title }}</title>
@@ -7,25 +7,24 @@
   <meta name="description" content="{{ page_description | escape }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <style type='text/css'>
-    @font-face {
-      font-family: 'Encient';
-      src: url('./EncientGermanGothic.ttf') format('truetype');
-    }
-    @font-face {
-      font-family: 'MyriadPro';
-      src: url('./MyriadPro-Light.otf') format('opentype');
-    }
-  </style>
   {{ content_for_header }} <!-- plugins -->
-  {{ 'lilithviper.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'lilithviper.min.js' | asset_url | script_tag }}
+  {{ 'fonts.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'application.js' | asset_url | script_tag }}
 </head>
 <body>
+  {% if template == 'index' %}
+    <div class='loading-screen'></div>
+    <div class='landing-page'>
+      LANDING PAGE !
+    </div>
+  {% endif %}
+
   <div class='wrapper'>
-    LILITH VIPER !
+    {{ content_for_layout }}
   </div>
 
+  {% comment %}
   {% for link in linklists.main-menu.links %}
     {% assign child_list_handle = link.title | handleize %}
     {% if linklists[child_list_handle].links != blank %}
@@ -37,21 +36,8 @@
       <a href="{{ link.url }}">{{ link.title }}</a>
     {% endif %}
   {% endfor %}
-
   <a href="/cart">cart</a>
+  {% endcomment %}
 
-  {% if shop.customer_accounts_enabled %}
-    {% if customer %}
-      <a href="/account">account</a>
-      {{ 'log out'  | customer_logout_link }}
-    {% else %}
-      {{ 'log in ' | customer_login_link }}
-      {{ 'register' | customer_register_link }}
-    {% endif %}
-  {% endif %}
-
-  <main role="main">
-    {{ content_for_layout }}
-  </main>
 </body>
 </html>

@@ -12,7 +12,7 @@ var MinifyPlugin = require("babel-minify-webpack-plugin");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = [{
-  entry: {'lilithviper.min': pathJS},
+  entry: {'application': pathJS},
   output: {
     library: appName,
     libraryTarget: 'var',

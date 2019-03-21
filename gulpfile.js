@@ -7,7 +7,7 @@ var resolveSass = callback => {
   importResolve({
 		"ext": "scss",
 		"pathToMain": pathSCSS + "style.scss",
-		"output": pathCSS + "lilithviper.scss.liquid"
+		"output": pathCSS + "application.scss.liquid"
 	});
   callback();
 };
