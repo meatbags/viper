@@ -1,10 +1,11 @@
 // colours
-$white: #fff;
-$black: #000;
+$white: #efe7df;
+$black: #101820;
+$grey: #888;
 $colour: #d6001c;
 $colourHover: #fff;
-$colourBackground: #f8c3d7;
-$colourOverlay: rgba($black, 0.2);
+$colourBackground: #f7ced7;
+$colourOverlay: rgba($black, 0.15);
 
 // space
 $space: 8px;
@@ -17,5 +18,10 @@ $indexLandingPage: 100;
 $indexLoadingScreen: 200;
 
 // breakpoints
-$tablet: 1000px;
+$tablet: 950px;
 $mobile: 700px;
+
+// style
+$border: 1px solid $colour;
+$borderBlack: 1px solid $black;
+$borderGrey: 1px solid $grey;

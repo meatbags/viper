@@ -16,7 +16,7 @@
   {% if template == 'index' %}
     <div class='loading-screen'></div>
     <div class='landing-page'>
-      {{ 'LilithViperVLogo.png' | file_url | img_tag }}
+      {{ 'LilithViperVLogoSnake.png' | file_url | img_tag }}
     </div>
   {% endif %}
 
@@ -26,22 +26,6 @@
     {{ content_for_layout }}
   </div>
 
-  {% include 'footer' %}  
-
-  {% comment %}
-  {% for link in linklists.main-menu.links %}
-    {% assign child_list_handle = link.title | handleize %}
-    {% if linklists[child_list_handle].links != blank %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-      [{% for childlink in linklists[child_list_handle].links %}
-        <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-      {% endfor %}]
-    {% else %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-    {% endif %}
-  {% endfor %}
-  <a href="/cart">cart</a>
-  {% endcomment %}
-
+  {% include 'footer' %}
 </body>
 </html>

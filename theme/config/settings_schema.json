@@ -7,11 +7,34 @@
     "theme_documentation_url": "https://github.com/meatbags/viper",
     "theme_support_url": "https://github.com/meatbags/viper"
   }, {
-    "name": "Settings",
+    "name": "Index Images Landscape",
     "settings": [{
       "type": "image_picker",
-      "id": "index_image",
-      "label": "Index Image"
+      "id": "index_image_1",
+      "label": "Index Image 1"
+    }, {
+      "type": "image_picker",
+      "id": "index_image_2",
+      "label": "Index Image 2"
+    }, {
+      "type": "image_picker",
+      "id": "index_image_3",
+      "label": "Index Image 3"
+    }]
+  }, {
+    "name": "Index Images Mobile",
+    "settings": [{
+      "type": "image_picker",
+      "id": "index_image_mobile_1",
+      "label": "Index Image Mobile 1"
+    }, {
+      "type": "image_picker",
+      "id": "index_image_mobile_2",
+      "label": "Index Image Mobile 2"
+    }, {
+      "type": "image_picker",
+      "id": "index_image_mobile_3",
+      "label": "Index Image Mobile 3"
     }]
   }
 ]

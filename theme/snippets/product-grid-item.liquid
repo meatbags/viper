@@ -1,10 +1,10 @@
-<div class='grid__item {{ productClass }}'>
-  <a href='{{ product.url }}'>
-    <img src='{{ product.featured_image.src | img_url: 'grande'}}' alt='{{ product.title }}'>
+<div class='grid__item {{ itemClass }}'>
+  <a href='{{ itemURL }}'>
+    <img src='{{ itemImage | img_url: 'grande' }}' alt='{{ itemTitle }}'>
     <div class='grid__item-overlay'>
       <div class='grid__item-text'>
-        <div class='grid__item-title'>{{ product.title }}</div>
-        <div class='grid__item-price'>{{ product.price | money_without_trailing_zeros }}</div>
+        <div class='grid__item-title'>{{ itemTitle }}</div>
+        <div class='grid__item-price'>{{ itemPrice | money_without_trailing_zeros }}</div>
       </div>
     </div>
   </a>

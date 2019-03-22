@@ -1,9 +1,9 @@
 {% assign className = 'nav' %}
-{% unless template == 'index' or template == 'page.contact' or template == 'page.about' %}
+{% unless template == 'index' %}
   {% assign className = 'nav nav--alt' %}
-  {% unless template == 'page.shop' or template == 'collection' or template == 'list-collections' %}
+  {% if template == 'cart' or template == 'product' %}
     {% assign className = 'nav nav--hide' %}
-  {% endunless %}
+  {% endif %}
 {% endunless %}
 <div class='{{className}}'>
   {% unless template == 'index' %}

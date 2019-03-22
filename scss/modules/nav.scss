@@ -1,9 +1,9 @@
 .nav {
   font-family: $fontStackTitle;
-  font-size: $fontSizeLarge;
+  line-height: $lineHeightTitle;
   position: fixed;
   top: 50%;
-  left: 25vw;
+  right: 65vw;
   transform: translateY(-50%) rotate(15deg);
   user-select: none;
   display: flex;
@@ -13,6 +13,7 @@
 
   .nav__title {
     font-size: $fontSizeHuge;
+    letter-spacing: $letterSpacingHuge;
 
     &:hover {
       text-decoration: underline;
@@ -21,7 +22,9 @@
 
   .nav__item {
     cursor: pointer;
-    @include pad(0, 0.5);
+    letter-spacing: $letterSpacingLarge;
+    font-size: $fontSizeLarge;
+    @include pad(0, 0.25);
 
     &:hover {
       text-decoration: underline;
