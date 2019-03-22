@@ -205,7 +205,7 @@ a {
       }
     }
 
-    .back-button {
+    .footer__back-button {
       width: 60px;
       height: 60px;
 
@@ -231,6 +231,7 @@ a {
   display: flex;
   justify-content: flex-end;
   padding-right: $spaceBorder;
+  padding-bottom: $spaceBorder * 2;
 
   .grid__inner {
     display: flex;
@@ -350,6 +351,19 @@ a {
   }
 }
 
+.back-button {
+  position: fixed;
+  top: $spaceBorder;
+  left: $spaceBorder;
+  white-space: nowrap;
+  font-size: $fontSizeMedium;
+  font-family: $fontStackTitle;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 
 // page-specific
 .loading-screen {
@@ -445,22 +459,6 @@ a {
   padding: $spaceBorder;
   padding-bottom: $spaceBorder * 2;
   position: relative;
-
-  .back-button {
-    position: absolute;
-    top: $spaceBorder;
-    left: $spaceBorder;
-    text-transform: uppercase;
-    text-decoration: underline;
-
-    .back-button__text {
-      font-size: $fontSizeSmall;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 
   .product__gallery {
     width: 60%;
@@ -675,7 +673,7 @@ a {
   justify-content: flex-end;
 
   .cart__inner {
-    width: 60%;
+    width: 50%;
 
     .cart__title {
       font-size: $fontSizeHuge;
@@ -710,7 +708,8 @@ a {
           font-size: $fontSizeMedium;
           font-family: $fontStackTitle;
           line-height: $lineHeightTitle;
-          border-bottom: $border;
+          //border-bottom: $border;
+          text-decoration: underline;
           margin-bottom: $space * 2;
         }
 
@@ -781,6 +780,67 @@ a {
           .cart__item-title {
             width: 100%;
           }
+        }
+      }
+    }
+  }
+}
+
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 100vh;
+  padding: $spaceBorder;
+
+  .page__inner {
+    width: 50%;
+    border-left: $border;
+    padding-left: $spaceBorder /2;
+    //font-size: $fontSizeMedium;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      label {
+        text-transform: capitalize;
+      }
+
+      input {
+        width: 250px;
+        max-width: 100%;
+        margin-bottom: $space;
+      }
+
+      textarea {
+        width: 400px;
+        max-width: 100%;
+        margin-bottom: $space;
+      }
+
+      .thankyou-msg {
+        text-decoration: underline;
+      }
+
+      input[type=submit] {
+        width: auto;
+        margin-top: $space;
+        @include pad(2, 1);
+        border-radius: 0 !important;
+        border: $border;
+        outline: none !important;
+        text-transform: capitalize;
+        font-size: $fontSizeMedium;
+        background: none;
+        color: $colour;
+        cursor: pointer;
+
+        &:hover {
+          background: $colour;
+          color: $colourBackground;
         }
       }
     }

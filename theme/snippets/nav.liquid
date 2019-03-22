@@ -17,3 +17,8 @@
     <div class='nav__item'><a href='/cart'>Bag ({{ cart.item_count }})</a></div>
   {% endunless %}
 </div>
+
+{% comment %} back button {% endcomment %}
+{% unless template == 'index' %}
+  {% include 'back-button' %}
+{% endunless %}
