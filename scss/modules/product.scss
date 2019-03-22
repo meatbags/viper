@@ -206,17 +206,21 @@
       }
 
       button {
-        margin-bottom: $space * 2;
-        color: $colour;
+        margin: 0;
+        @include pad(2, 1);
+        border-radius: 0 !important;
+        border: $border;
+        outline: none !important;
+        text-transform: uppercase;
         font-size: $fontSizeMedium;
         background: none;
-        outline: none !important;
+        color: $colour;
         cursor: pointer;
-        text-transform: uppercase;
-        padding: 0;
-        margin: 0;
-        border: none;
-        border-bottom: $border;
+
+        &:hover {
+          background: $colour;
+          color: $colourBackground;
+        }
       }
     }
   }
