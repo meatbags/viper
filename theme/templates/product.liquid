@@ -35,8 +35,8 @@
   </div>
   <div class='product__info'>
     <div class='product__title'>{{ product.title }}</div>
-    <div class='product__price'>{{ current_variant.price | money_with_currency }}</div>
     <div class='product__description'>{{ product.description }}</div>
+    <div class='product__price'>{{ current_variant.price | money_with_currency }}</div>
     <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
       <div class='product__options'>
         <select name="id" id="productSelect">
@@ -58,8 +58,13 @@
       </div>
       <button type="submit" name="add" id="AddToCart">Add to bag</button>
     </form>
+    {% unless cart.item_count == 0 %}
+      <div class='product__cart-link'>
+        <a href='/cart'>View Bag ({{ cart.item_count }})</a>
+      </div>
+    {% endunless %}
   </div>
   <div class='back-button'>
-    <a href="javascript:history.back()">&larr; <span class='back-button__text'>Back</span></a>
+    <a href="javascript:history.back()">&larr; <span class='back-button__text'>Go Back</span></a>
   </div>
 </div>

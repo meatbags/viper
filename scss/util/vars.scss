@@ -18,10 +18,15 @@ $indexLandingPage: 100;
 $indexLoadingScreen: 200;
 
 // breakpoints
+$smallScreen: 1100px;
 $tablet: 950px;
 $mobile: 700px;
+
+// animation
+$transition: 0.35s;
 
 // style
 $border: 1px solid $colour;
 $borderBlack: 1px solid $black;
 $borderGrey: 1px solid $grey;
+$borderSubtle: 1px solid rgba($black, 0.5);

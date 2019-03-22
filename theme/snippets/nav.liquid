@@ -1,11 +1,11 @@
-{% assign className = 'nav' %}
-{% unless template == 'index' %}
-  {% assign className = 'nav nav--alt' %}
-  {% if template == 'cart' or template == 'product' %}
-    {% assign className = 'nav nav--hide' %}
-  {% endif %}
-{% endunless %}
-<div class='{{className}}'>
+{% assign modifier = '' %}
+{% if template == 'index' %}
+  {% assign modifier = 'nav--index' %}
+{% elsif template == 'cart' or template == 'product' %}
+  {% assign modifier = 'nav--hide' %}
+{% endif %}
+
+<div class='nav {{modifier}}'>
   {% unless template == 'index' %}
     <div class='nav__title'><a href='/'>Lilith Viper</a></div>
   {% endunless %}

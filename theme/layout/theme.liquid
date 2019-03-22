@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <!-- website by xavierburrow.com -->
 <head>
-  <title>{{ page_title }}</title>
+  {% unless template == 'index' %}
+    <title>Lilith Viper - {{ page_title }}</title>
+  {% else %}
+    <title>Lilith Viper</title>
+  {% endunless %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="{{ page_description | escape }}">
@@ -11,6 +15,7 @@
   {{ 'fonts.scss.css' | asset_url | stylesheet_tag }}
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0071/6495/2629/files/favicon.png?8921" />
 </head>
 <body>
   {% if template == 'index' %}

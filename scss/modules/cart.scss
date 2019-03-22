@@ -1,0 +1,40 @@
+.cart {
+  width: 100%;
+  min-height: 100vh;
+  padding: $spaceBorder;
+
+  .cart__inner {
+    width: 100%;
+
+    .cart__title {
+      font-size: $fontSizeLarge;
+      font-family: $fontStackTitle;
+      line-height: $lineHeightTitle;
+      width: 100%;
+      padding-bottom: $space * 2;
+      margin-bottom: $space * 2;
+      border-bottom: $border;
+    }
+
+    .cart__item {
+      width: 100%;
+      display: flex;
+
+      .cart__item-image {
+        img {
+
+        }
+      }
+
+      .cart__item-info {
+        flex: 1;
+      }
+    }
+
+    .cart__empty-msg {
+       a {
+         text-decoration: underline;
+       }
+    }
+  }
+}

@@ -1,20 +1,22 @@
-{% if cart.item_count > 0 %}
-  <h1>cart</h1>
-  <form action="/cart" method="post" novalidate>
-    <table>
-      <thead>
-        <th colspan="2">Prod</th>
-        <th>Price</th>
-        <th>Qty</th>
-        <th>total</th>
-      </thead>
-      <tbody>
+<div class='cart'>
+  <div class='cart__inner'>
+    <div class='cart__title'>Bag</div>
+    {% if cart.item_count > 0 %}
+      <form action="/cart" method="post" novalidate>
         {% for item in cart.items %}
-          <tr>
-            <td>
+          <div class='cart__item'>
+            <div class='cart__item-image'>
               <a href="{{ item.url | within: collections.all }}">
                 <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
               </a>
+            </div>
+            <div class='cart__item-info'>
+              
+            </div>
+          </div>
+          <tr>
+            <td>
+
             </td>
             <td>
               <a href="{{ item.url }}">{{ item.product.title }}</a>
@@ -32,15 +34,16 @@
             </td>
           </tr>
         {% endfor %}
-      </tbody>
-    </table>
-    <div>
-      <p>sub total : {{ cart.total_price | money }}</p>
-      <button type="submit" name="update">Update</button>
-      <button type="submit" name="checkout">Checkout</button>
-    </div>
-  </form>
-{% else %}
-  <h2>cart</h2>
-  Cart is empty
-{% endif %}
+        <div>
+          <p>sub total: {{ cart.total_price | money }}</p>
+          <button type="submit" name="update">Update</button>
+          <button type="submit" name="checkout">Checkout</button>
+        </div>
+      </form>
+    {% else %}
+      <div class='cart__empty-msg'>
+        Your bag is empty, continue shopping <a href='/pages/shop'>here.</a>
+      </div>
+    {% endif %}
+  </div>
+</div>

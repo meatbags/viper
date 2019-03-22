@@ -3,12 +3,12 @@
   line-height: $lineHeightTitle;
   position: fixed;
   top: 50%;
-  right: 65vw;
-  transform: translateY(-50%) rotate(15deg);
+  left: $spaceBorder;
+  transform: translateY(-50%);
   user-select: none;
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
-  align-items: flex-end;
   z-index: $indexNav;
 
   .nav__title {
@@ -23,7 +23,7 @@
   .nav__item {
     cursor: pointer;
     letter-spacing: $letterSpacingLarge;
-    font-size: $fontSizeLarge;
+    font-size: $fontSizeMedium;
     @include pad(0, 0.25);
 
     &:hover {
@@ -31,21 +31,26 @@
     }
   }
 
-  &.nav--alt {
-    align-items: flex-start;
-    transform: translateY(-50%);
-    left: $spaceBorder;
+  &.nav--index {
+    align-items: flex-end;
+    transform: translateY(-50%) rotate(15deg);
+    right: 65vw;
+    left: auto;
 
     .nav__item {
-      font-size: $fontSizeMedium;
-    }
-
-    .nav__back {
-      display: block;
+      font-size: $fontSizeLarge;
     }
   }
 
   &.nav--hide {
     display: none;
+  }
+
+  @media screen and (max-width: $tablet) {
+    display: none;
+
+    &.nav--index {
+      display: block;
+    }
   }
 }
