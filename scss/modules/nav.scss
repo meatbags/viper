@@ -42,7 +42,11 @@
     left: auto;
 
     .nav__item {
-      font-size: $fontSizeLarge;
+      @include pad(1, 0.25);
+      margin-top: 0.25 * $space;
+      margin-bottom: 0.25 * $space;
+      font-size: $fontSizeHuge;
+      background: $black;
     }
   }
 

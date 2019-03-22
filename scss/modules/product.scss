@@ -5,22 +5,6 @@
   padding-bottom: $spaceBorder * 2;
   position: relative;
 
-  .back-button {
-    position: absolute;
-    top: $spaceBorder;
-    left: $spaceBorder;
-    text-transform: uppercase;
-    text-decoration: underline;
-
-    .back-button__text {
-      font-size: $fontSizeSmall;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
   .product__gallery {
     width: 60%;
     display: flex;

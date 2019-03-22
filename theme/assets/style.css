@@ -187,7 +187,14 @@ a {
     right: 65vw;
     left: auto; }
     .nav.nav--index .nav__item {
-      font-size: 48px; }
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      font-size: 76px;
+      background: #101820; }
   .nav.nav--hide {
     display: none; }
   @media screen and (max-width: 950px) {
@@ -398,7 +405,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.25; }
+    opacity: 1; }
   .background-image .background-image__landscape {
     display: none; }
     .background-image .background-image__landscape.active {
@@ -647,7 +654,8 @@ a {
       justify-content: flex-start;
       align-items: flex-start; }
       .page .page__inner form label {
-        text-transform: capitalize; }
+        text-transform: capitalize;
+        text-decoration: underline; }
       .page .page__inner form input {
         width: 250px;
         max-width: 100%;

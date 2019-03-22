@@ -1,0 +1,12 @@
+.back-button {
+  position: fixed;
+  top: $spaceBorder;
+  left: $spaceBorder;
+  white-space: nowrap;
+  font-size: $fontSizeMedium;
+  font-family: $fontStackTitle;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

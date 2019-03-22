@@ -4,6 +4,7 @@
   display: flex;
   justify-content: flex-end;
   padding-right: $spaceBorder;
+  padding-bottom: $spaceBorder * 2;
 
   .grid__inner {
     display: flex;

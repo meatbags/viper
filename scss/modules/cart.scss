@@ -6,7 +6,7 @@
   justify-content: flex-end;
 
   .cart__inner {
-    width: 60%;
+    width: 50%;
 
     .cart__title {
       font-size: $fontSizeHuge;
@@ -41,7 +41,8 @@
           font-size: $fontSizeMedium;
           font-family: $fontStackTitle;
           line-height: $lineHeightTitle;
-          border-bottom: $border;
+          //border-bottom: $border;
+          text-decoration: underline;
           margin-bottom: $space * 2;
         }
 

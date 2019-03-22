@@ -1,0 +1,61 @@
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 100vh;
+  padding: $spaceBorder;
+
+  .page__inner {
+    width: 50%;
+    border-left: $border;
+    padding-left: $spaceBorder /2;
+    //font-size: $fontSizeMedium;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      label {
+        text-transform: capitalize;
+        text-decoration: underline;
+      }
+
+      input {
+        width: 250px;
+        max-width: 100%;
+        margin-bottom: $space;
+      }
+
+      textarea {
+        width: 400px;
+        max-width: 100%;
+        margin-bottom: $space;
+      }
+
+      .thankyou-msg {
+        text-decoration: underline;
+      }
+
+      input[type=submit] {
+        width: auto;
+        margin-top: $space;
+        @include pad(2, 1);
+        border-radius: 0 !important;
+        border: $border;
+        outline: none !important;
+        text-transform: capitalize;
+        font-size: $fontSizeMedium;
+        background: none;
+        color: $colour;
+        cursor: pointer;
+
+        &:hover {
+          background: $colour;
+          color: $colourBackground;
+        }
+      }
+    }
+  }
+}
