@@ -4,12 +4,22 @@
   justify-content: flex-end;
   min-height: 100vh;
   padding: $spaceBorder;
+  padding-left: 0;
 
   .page__inner {
-    width: 50%;
+    width: 68%;
     border-left: $border;
-    padding-left: $spaceBorder /2;
-    //font-size: $fontSizeMedium;
+    padding-left: $spaceBorder / 2;
+
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
 
     form {
       display: flex;
@@ -19,17 +29,16 @@
 
       label {
         text-transform: capitalize;
-        text-decoration: underline;
       }
 
       input {
-        width: 250px;
+        width: 300px;
         max-width: 100%;
         margin-bottom: $space;
       }
 
       textarea {
-        width: 400px;
+        width: 600px;
         max-width: 100%;
         margin-bottom: $space;
       }

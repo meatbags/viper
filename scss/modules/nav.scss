@@ -2,9 +2,8 @@
   font-family: $fontStackTitle;
   line-height: $lineHeightTitle;
   position: fixed;
-  top: 50%;
+  top: $spaceBorder;
   left: $spaceBorder;
-  transform: translateY(-50%);
   user-select: none;
   display: flex;
   align-items: flex-start;
@@ -14,6 +13,8 @@
   .nav__title {
     font-size: $fontSizeHuge;
     letter-spacing: $letterSpacingHuge;
+    text-decoration: underline;
+    //border-bottom: $border;
 
     &:hover {
       text-decoration: underline;
@@ -37,7 +38,8 @@
 
   &.nav--index {
     align-items: flex-end;
-    transform: translateY(-50%) rotate(15deg);
+    top: 50%;
+    transform: translateY(-50%) rotate($rotation);
     right: 65vw;
     left: auto;
 
@@ -46,7 +48,6 @@
       margin-top: 0.25 * $space;
       margin-bottom: 0.25 * $space;
       font-size: $fontSizeHuge;
-      background: $black;
     }
   }
 

@@ -1,24 +1,23 @@
 <div class='cart'>
   <div class='cart__inner'>
-    <div class='cart__title'>My Bag</div>
+    <!-- <div class='cart__title'>My Bag</div> -->
     {% if cart.item_count > 0 %}
       <form action="/cart" method="post" novalidate>
         {% for item in cart.items %}
           <div class='cart__item'>
             <div class='cart__item-image'>
               <a href="{{ item.url | within: collections.all }}">
-                <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+                <img src="{{ item | img_url: 'large' }}" alt="{{ item.title | escape }}">
               </a>
             </div>
             <div class='cart__item-info'>
               <div class='cart__item-title'>
                 <a href="{{ item.url }}">{{ item.product.title }}</a>
               </div>
-              <div class='cart__item-variant'>
-                ({{ item.variant.title }})
-              </div>
+              {% comment %}<div class='cart__item-variant'></div>{% endcomment %}
               <div class='cart__item-price'>
-                <span class='cart__item-individual-price'>{{ item.price | money }}</span>&nbsp;x&nbsp;
+                ({{ item.variant.title }})
+                <span class='cart__item-individual-price'>{{ item.price | money }}</span>&nbsp;x
                 <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">
               </div>
               <div class='cart__item-total-price'>
@@ -29,13 +28,13 @@
                 {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
               </div>
               <div class='cart__item-remove'>
-                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove item</a>
+                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove &times;</a>
               </div>
             </div>
           </div>
         {% endfor %}
-        <div class='cart__sub-total'>
-          <p>Sub Total: {{ cart.total_price | money }}</p>
+        <div class='cart__checkout'>
+          <p class='cart__checkout-sub-total'>Sub Total: {{ cart.total_price | money }}</p>
           <button type="submit" name="update">Update</button>
           <button type="submit" name="checkout">Checkout</button>
         </div>

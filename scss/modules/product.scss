@@ -14,14 +14,14 @@
     .product__gallery-menu {
       display: flex;
       flex-direction: column;
-      margin-right: $space;
+      margin-right: $space * 2;
       position: relative;
 
       .product__gallery-menu-thumbnail {
         width: 180px;
         height: 180px;
         cursor: pointer;
-        margin-bottom: $space;
+        margin-bottom: $space * 2;
         position: relative;
 
         img {
@@ -125,7 +125,7 @@
       font-family: $fontStackTitle;
       font-size: $fontSizeLarge;
       line-height: $lineHeightTitle;
-      margin-bottom: $space * 2;
+      margin-bottom: $space;
     }
 
     .product__description {

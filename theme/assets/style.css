@@ -136,7 +136,7 @@ html, body {
 
 body {
   font-family: "MyriadPro", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.4;
   letter-spacing: 1px;
   color: #d6001c;
@@ -156,23 +156,23 @@ a {
   font-family: "Encient", serif;
   line-height: 1;
   position: fixed;
-  top: 50%;
+  top: 56px;
   left: 56px;
-  transform: translateY(-50%);
   user-select: none;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   z-index: 50; }
   .nav .nav__title {
-    font-size: 76px;
-    letter-spacing: 6px; }
+    font-size: 68px;
+    letter-spacing: 6px;
+    text-decoration: underline; }
     .nav .nav__title:hover {
       text-decoration: underline; }
   .nav .nav__item {
     cursor: pointer;
     letter-spacing: 3px;
-    font-size: 24px;
+    font-size: 28px;
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 2px;
@@ -183,6 +183,7 @@ a {
       text-decoration: underline; }
   .nav.nav--index {
     align-items: flex-end;
+    top: 50%;
     transform: translateY(-50%) rotate(15deg);
     right: 65vw;
     left: auto; }
@@ -193,8 +194,7 @@ a {
       padding-bottom: 2px;
       margin-top: 2px;
       margin-bottom: 2px;
-      font-size: 76px;
-      background: #101820; }
+      font-size: 68px; }
   .nav.nav--hide {
     display: none; }
   @media screen and (max-width: 950px) {
@@ -209,9 +209,10 @@ a {
   padding: 56px;
   padding-top: 56px;
   padding-bottom: 16px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
-  user-select: none; }
+  user-select: none;
+  pointer-events: none; }
   .footer.footer--fixed {
     position: fixed;
     left: 0;
@@ -229,7 +230,9 @@ a {
         padding-left: 4px;
         padding-right: 4px;
         padding-top: 0px;
-        padding-bottom: 0px; }
+        padding-bottom: 0px;
+        pointer-events: all;
+        text-decoration: underline; }
         .footer .footer__row .footer__section .footer__item:hover {
           text-decoration: underline; }
       .footer .footer__row .footer__section:nth-of-type(1) {
@@ -242,7 +245,8 @@ a {
           padding-right: 0; }
     .footer .footer__row .footer__back-button {
       width: 60px;
-      height: 60px; }
+      height: 60px;
+      pointer-events: all; }
       .footer .footer__row .footer__back-button a {
         display: flex;
         width: 100%;
@@ -269,7 +273,8 @@ a {
       width: 33.333%; }
       .grid .grid__inner .grid__column .grid__item {
         width: 100%;
-        height: 32vw; }
+        height: 32vw;
+        background: #d6001c; }
         .grid .grid__inner .grid__column .grid__item a {
           position: relative;
           display: flex;
@@ -287,7 +292,6 @@ a {
             height: 100%;
             background: rgba(16, 24, 32, 0.15);
             opacity: 0;
-            transition: 0.35s;
             pointer-events: none;
             display: flex;
             justify-content: flex-end;
@@ -303,10 +307,10 @@ a {
               line-height: 1; }
               .grid .grid__inner .grid__column .grid__item a .grid__item-overlay .grid__item-text .grid__item-title {
                 font-family: "Encient", serif;
-                font-size: 24px;
+                font-size: 28px;
                 margin-bottom: 4px; }
               .grid .grid__inner .grid__column .grid__item a .grid__item-overlay .grid__item-text .grid__item-price {
-                font-size: 15px; }
+                font-size: 18px; }
           .grid .grid__inner .grid__column .grid__item a:hover .grid__item-overlay {
             opacity: 1; }
         .grid .grid__inner .grid__column .grid__item.grid__item--double, .grid .grid__inner .grid__column .grid__item.grid__item--single {
@@ -343,7 +347,7 @@ a {
   top: 56px;
   left: 56px;
   white-space: nowrap;
-  font-size: 24px;
+  font-size: 28px;
   font-family: "Encient", serif; }
   .back-button:hover {
     text-decoration: underline; }
@@ -433,13 +437,13 @@ a {
     .product .product__gallery .product__gallery-menu {
       display: flex;
       flex-direction: column;
-      margin-right: 8px;
+      margin-right: 16px;
       position: relative; }
       .product .product__gallery .product__gallery-menu .product__gallery-menu-thumbnail {
         width: 180px;
         height: 180px;
         cursor: pointer;
-        margin-bottom: 8px;
+        margin-bottom: 16px;
         position: relative; }
         .product .product__gallery .product__gallery-menu .product__gallery-menu-thumbnail img {
           width: 100%;
@@ -507,7 +511,7 @@ a {
       font-family: "Encient", serif;
       font-size: 48px;
       line-height: 1;
-      margin-bottom: 16px; }
+      margin-bottom: 8px; }
     .product .product__info .product__description {
       border-top: 1px solid #d6001c;
       padding-top: 16px;
@@ -524,7 +528,7 @@ a {
     .product .product__info .product__cart-link {
       margin-top: 4px;
       text-transform: uppercase;
-      font-size: 11px; }
+      font-size: 12px; }
       .product .product__info .product__cart-link:hover {
         text-decoration: underline; }
     .product .product__info #AddToCartForm .product__options {
@@ -532,7 +536,7 @@ a {
       display: flex;
       align-items: flex-end; }
       .product .product__info #AddToCartForm .product__options label {
-        font-size: 11px;
+        font-size: 12px;
         text-transform: uppercase; }
       .product .product__info #AddToCartForm .product__options #Quantity {
         width: 80px; }
@@ -555,7 +559,7 @@ a {
       border: 1px solid #d6001c;
       outline: none !important;
       text-transform: uppercase;
-      font-size: 24px;
+      font-size: 28px;
       background: none;
       color: #d6001c;
       cursor: pointer; }
@@ -567,33 +571,49 @@ a {
   width: 100%;
   min-height: 100vh;
   padding: 56px;
+  padding-bottom: 112px;
+  padding-left: 0;
   display: flex;
   justify-content: flex-end; }
   .cart .cart__inner {
-    width: 50%; }
+    width: 68%; }
     .cart .cart__inner .cart__title {
-      font-size: 76px;
+      font-size: 68px;
       font-family: "Encient", serif;
       line-height: 1;
       width: 100%;
-      padding-bottom: 8px;
-      margin-bottom: 16px;
-      border-bottom: 1px solid #d6001c; }
+      text-decoration: underline;
+      margin-bottom: 16px; }
     .cart .cart__inner .cart__item {
       width: 100%;
       display: flex;
-      margin-bottom: 16px; }
-      .cart .cart__inner .cart__item .cart__item-image a {
-        display: flex; }
+      margin-bottom: 16px;
+      padding: 16px;
+      background: rgba(214, 0, 28, 0.125); }
+      .cart .cart__inner .cart__item:nth-child(2n) {
+        background: rgba(214, 0, 28, 0.25); }
+      .cart .cart__inner .cart__item .cart__item-image {
+        width: 220px;
+        height: 220px;
+        background: #d6001c; }
+        .cart .cart__inner .cart__item .cart__item-image a {
+          display: flex;
+          width: 100%;
+          height: 100%; }
+          .cart .cart__inner .cart__item .cart__item-image a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
       .cart .cart__inner .cart__item .cart__item-info {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding-left: 8px; }
+        padding-left: 16px;
+        position: relative; }
         .cart .cart__inner .cart__item .cart__item-info .cart__item-title {
-          font-size: 24px;
+          font-size: 48px;
           font-family: "Encient", serif;
           line-height: 1;
           text-decoration: underline;
@@ -605,10 +625,23 @@ a {
           outline: none !important;
           text-align: right; }
         .cart .cart__inner .cart__item .cart__item-info .cart__item-remove {
-          margin-top: 16px; }
+          position: absolute;
+          top: 0;
+          right: 0;
+          border: 1px solid #d6001c;
+          text-transform: uppercase;
+          font-size: 12px; }
           .cart .cart__inner .cart__item .cart__item-info .cart__item-remove a {
-            text-decoration: underline; }
-    .cart .cart__inner .cart__sub-total button {
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 8px;
+            padding-bottom: 8px; }
+          .cart .cart__inner .cart__item .cart__item-info .cart__item-remove:hover {
+            background: #d6001c;
+            color: #f7ced7; }
+    .cart .cart__inner .cart__checkout .cart__checkout-sub-total {
+      text-decoration: underline; }
+    .cart .cart__inner .cart__checkout button {
       padding-left: 16px;
       padding-right: 16px;
       padding-top: 8px;
@@ -617,11 +650,12 @@ a {
       border: 1px solid #d6001c;
       outline: none !important;
       text-transform: uppercase;
-      font-size: 24px;
+      text-decoration: none;
+      font-size: 28px;
       background: none;
       color: #d6001c;
       cursor: pointer; }
-      .cart .cart__inner .cart__sub-total button:hover {
+      .cart .cart__inner .cart__checkout button:hover {
         background: #d6001c;
         color: #f7ced7; }
     .cart .cart__inner .cart__empty-msg a {
@@ -643,25 +677,29 @@ a {
   display: flex;
   justify-content: flex-end;
   min-height: 100vh;
-  padding: 56px; }
+  padding: 56px;
+  padding-left: 0; }
   .page .page__inner {
-    width: 50%;
+    width: 68%;
     border-left: 1px solid #d6001c;
     padding-left: 28px; }
+    .page .page__inner p:first-child {
+      margin-top: 0; }
+    .page .page__inner p:last-child {
+      margin-bottom: 0; }
     .page .page__inner form {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start; }
       .page .page__inner form label {
-        text-transform: capitalize;
-        text-decoration: underline; }
+        text-transform: capitalize; }
       .page .page__inner form input {
-        width: 250px;
+        width: 300px;
         max-width: 100%;
         margin-bottom: 8px; }
       .page .page__inner form textarea {
-        width: 400px;
+        width: 600px;
         max-width: 100%;
         margin-bottom: 8px; }
       .page .page__inner form .thankyou-msg {
@@ -677,7 +715,7 @@ a {
         border: 1px solid #d6001c;
         outline: none !important;
         text-transform: capitalize;
-        font-size: 24px;
+        font-size: 28px;
         background: none;
         color: #d6001c;
         cursor: pointer; }
