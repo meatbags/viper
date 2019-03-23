@@ -59,7 +59,15 @@
     display: none;
 
     &.nav--index {
-      display: block;
+      display: flex;
+      top: 50%;
+      left: 50%;
+      right: auto;
+      transform: translate(-50%, -50%) rotate($rotation);
+
+      .nav__item {
+        font-size: $fontSizeLarge;
+      }
     }
   }
 }

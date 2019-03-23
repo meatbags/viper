@@ -63,6 +63,21 @@
                 font-size: $fontSize;
               }
             }
+
+            @media screen and (max-width: $tablet) {
+              justify-content: center;
+              align-items: center;
+
+              .grid__item-text {
+                .grid__item-title {
+                  font-size: $fontSizeLarge;
+                }
+
+                .grid__item-price {
+                  font-size: $fontSizeMedium;
+                }
+              }
+            }
           }
 
           &:hover {
@@ -81,6 +96,7 @@
 
   @media screen and (max-width: $tablet) {
     padding-right: 0;
+    padding-bottom: 0;
 
     .grid__inner {
       width: 100%;

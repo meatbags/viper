@@ -11,8 +11,17 @@
     border-left: $border;
     padding-left: $spaceBorder / 2;
 
+    .page__title {
+      //display: none;
+      width: 100%;
+      font-family: $fontStackTitle;
+      line-height: $lineHeightTitle;
+      font-size: $fontSizeLarge;
+      margin-bottom: $space * 2;
+    }
+
     p {
-      &:first-child {
+      &:nth-of-type(1) {
         margin-top: 0;
       }
 
@@ -26,6 +35,10 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
+
+      input, textarea {
+        border-radius: 0 !important;
+      }
 
       label {
         text-transform: capitalize;
@@ -65,6 +78,28 @@
           color: $colourBackground;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: $spaceBorderMobile;
+    padding-top: $spaceBorder * 1.5;
+
+    .page__inner {
+      padding-left: 0;
+      width: 100%;
+      border-left: none;
+      padding: none;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    input, textarea {
+      width: 100%;
+    }
+
+    input[type=submit] {
+      width: auto;
     }
   }
 }

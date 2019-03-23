@@ -5,6 +5,7 @@ $grey: #888;
 $colour: #d6001c;
 $colourHover: #fff;
 $colourBackground: #f7ced7;
+$colourMobileNavBackground: rgba($black, 0.85);
 $colourOverlay: rgba($black, 0.15);
 
 // space
@@ -17,6 +18,8 @@ $indexNav: 50;
 $indexFooter: 50;
 $indexLandingPage: 100;
 $indexLoadingScreen: 200;
+$indexMobileNav: 50;
+$indexMobileNavButton: 60;
 
 // breakpoints
 $smallScreen: 1100px;
