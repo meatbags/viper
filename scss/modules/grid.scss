@@ -6,6 +6,10 @@
   padding-right: $spaceBorder;
   padding-bottom: $spaceBorder * 2;
 
+  &.grid--alt {
+    min-height: auto;
+  }
+
   .grid__inner {
     display: flex;
     justify-content: space-between;
@@ -43,8 +47,8 @@
             //transition: $transition;
             pointer-events: none;
             display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
+            justify-content: center;
+            align-items: center;
             border: $border;
             z-index: 1;
 
@@ -79,8 +83,10 @@
               }
             }
           }
+        }
 
-          &:hover {
+        &:hover, &:active, &.active {
+          a {
             .grid__item-overlay {
               opacity: 1;
             }
@@ -94,11 +100,37 @@
     }
   }
 
+  &.grid--collections {
+    .grid__inner {
+      .grid__column {
+        width: 50%;
+
+        .grid__item {
+          height: 100vh;
+          background: $colourBackground;
+
+          a .grid__item-overlay .grid__item-text .grid__item-title {
+            font-size: ($fontSizeHuge + $fontSizeLarge) / 2.5;
+          }
+        }
+        .grid__item.grid__item--double {
+          display: block;
+        }
+        .grid__item.grid__item--triple {
+          display: none;
+        }
+        &:nth-of-type(3) {
+          display: none;
+        }
+      }
+    }
+  }
+
   @media screen and (max-width: $tablet) {
     padding-right: 0;
     padding-bottom: 0;
 
-    .grid__inner {
+    .grid__inner{
       width: 100%;
 
       .grid__column {
@@ -118,15 +150,39 @@
         }
       }
     }
+
+    &.grid--collections .grid__inner {
+      .grid__column {
+        width: 100%;
+
+        .grid__item {
+          height: 100vh;
+          padding: $space;
+        }
+        .grid__item.grid__item--single {
+          display: block;
+        }
+        .grid__item.grid__item--double {
+          display: none;
+        }
+        &:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: $mobile) {
-    .grid__inner {
+    .grid__inner, &.grid--collections .grid__inner {
       width: 100%;
 
       .grid__column {
         width: 100%;
 
+        .grid__item {
+          height: 500px;
+          padding: 0;
+        }
         .grid__item.grid__item--single {
           display: block;
         }

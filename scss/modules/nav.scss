@@ -6,53 +6,73 @@
   left: $spaceBorder;
   user-select: none;
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
   z-index: $indexNav;
 
-  .nav__title {
-    font-size: $fontSizeHuge;
-    letter-spacing: $letterSpacingHuge;
-    text-decoration: underline;
-    //border-bottom: $border;
+  .nav__inner {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 
-    &:hover {
-      text-decoration: underline;
+    .nav__title {
+      font-size: $fontSizeHuge;
+      letter-spacing: $letterSpacingNavTitle;
+      //white-space: nowrap;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .nav__item {
+      cursor: pointer;
+      letter-spacing: $letterSpacingLarge;
+      font-size: $fontSizeMedium;
+      @include pad(0, 0.25);
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.active {
+        text-decoration: underline;
+      }
     }
   }
 
-  .nav__item {
-    cursor: pointer;
-    letter-spacing: $letterSpacingLarge;
-    font-size: $fontSizeMedium;
-    @include pad(0, 0.25);
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &.active {
-      text-decoration: underline;
-    }
+  &.nav--page {
+    left: 0;
+    width: 30.5%;
+    justify-content: center;
   }
 
   &.nav--index {
-    align-items: flex-end;
     top: 50%;
     transform: translateY(-50%) rotate($rotation);
     right: 65vw;
     left: auto;
 
-    .nav__item {
-      @include pad(1, 0.25);
-      margin-top: 0.25 * $space;
-      margin-bottom: 0.25 * $space;
-      font-size: $fontSizeHuge;
+    .nav__inner {
+      align-items: flex-end;
+
+      .nav__item {
+        @include pad(1, 0.25);
+        margin-top: 0.25 * $space;
+        margin-bottom: 0.25 * $space;
+        font-size: $fontSizeHuge;
+        text-shadow: 1.5px 1.5px $black;
+      }
     }
   }
 
   &.nav--hide {
     display: none;
+  }
+
+  @media screen and (max-width: $mediumScreen) {
+    &.nav--page {
+      left: $spaceBorder;
+      justify-content: flex-start;
+    }
   }
 
   @media screen and (max-width: $tablet) {
@@ -65,8 +85,10 @@
       right: auto;
       transform: translate(-50%, -50%) rotate($rotation);
 
-      .nav__item {
-        font-size: $fontSizeLarge;
+      .nav__inner {
+        .nav__item {
+          font-size: $fontSizeLarge;
+        }
       }
     }
   }

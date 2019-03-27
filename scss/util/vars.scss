@@ -1,12 +1,12 @@
 // colours
-$white: #efe7df;
+$white: #fff;
 $black: #101820;
 $grey: #888;
 $colour: #d6001c;
 $colourHover: #fff;
-$colourBackground: #f7ced7;
+$colourBackground: #E6BEDD;
 $colourMobileNavBackground: rgba($black, 0.85);
-$colourOverlay: rgba($black, 0.15);
+$colourOverlay: rgba($colourBackground, 0.75);
 
 // space
 $space: 8px;
@@ -22,6 +22,7 @@ $indexMobileNav: 50;
 $indexMobileNavButton: 60;
 
 // breakpoints
+$mediumScreen: 1500px;
 $smallScreen: 1100px;
 $tablet: 950px;
 $mobile: 700px;

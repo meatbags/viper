@@ -1,0 +1,36 @@
+.custom-made {
+  width: 100%;
+
+  .custom-made__title {
+    font-size: $fontSizeLarge;
+    font-family: $fontStackTitle;
+    line-height: $lineHeightTitle;
+  }
+
+  .custom-made__description {
+    margin-top: $space * 2;
+    margin-bottom: $space * 2;
+
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .custom-made__link {
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    margin-top: $space * 4;
+    padding: $spaceBorderMobile;
+    text-align: center;
+  }
+}

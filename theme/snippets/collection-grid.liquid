@@ -1,0 +1,33 @@
+<div class='grid grid--collections'>
+  <div class='grid__inner'>
+    {% for i in (0..2) %}
+      {% assign indexHalf = 0 %}
+
+      <div class='grid__column'>
+        {% for item in itemArray %}
+          {% unless item.title == 'All' %}
+            {% assign itemTitle = item.title %}
+            {% assign itemURL = item.url %}
+            {% assign itemImage = item.image.src | img_url: 'master' %}
+
+            {% comment %} items for single grid {% endcomment %}
+            {% if i == 0 %}
+              {% assign itemClass = 'grid__item--single' %}
+              {% include 'product-grid-item' %}
+            {% endif %}
+
+            {% comment %} items for double grid {% endcomment %}
+            {% if i <= 1 %}
+              {% assign flag = indexHalf | minus:i | modulo:2 %}
+              {% if flag  == 0 %}
+                {% assign itemClass = 'grid__item--double' %}
+                {% include 'product-grid-item' %}
+              {% endif %}
+              {% assign indexHalf = indexHalf | plus:1 %}
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

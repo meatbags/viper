@@ -6,18 +6,10 @@
 
       <div class='grid__column'>
         {% for item in itemArray %}
-          {% comment %} check for product or collection {% endcomment %}
-          {% if item.price %}
-            {% assign itemTitle = item.title %}
-            {% assign itemURL = item.url %}
-            {% assign itemPrice = item.price %}
-            {% assign itemImage = item.featured_image.src %}
-          {% else %}
-            {% assign itemTitle = item.title %}
-            {% assign itemURL = item.url %}
-            {% assign itemPrice = '' %}
-            {% assign itemImage = item.image.src %}
-          {% endif %}
+          {% assign itemTitle = item.title %}
+          {% assign itemURL = item.url %}
+          {% assign itemPrice = item.price %}
+          {% assign itemImage = item.featured_image.src | img_url: 'grande' %}
 
           {% comment %} items for single grid {% endcomment %}
           {% if i == 0 %}

@@ -1,12 +1,12 @@
 // colours
-$white: #efe7df;
+$white: #fff;
 $black: #101820;
 $grey: #888;
 $colour: #d6001c;
 $colourHover: #fff;
-$colourBackground: #f7ced7;
+$colourBackground: #E6BEDD;
 $colourMobileNavBackground: rgba($black, 0.85);
-$colourOverlay: rgba($black, 0.15);
+$colourOverlay: rgba($colourBackground, 0.75);
 
 // space
 $space: 8px;
@@ -22,6 +22,7 @@ $indexMobileNav: 50;
 $indexMobileNavButton: 60;
 
 // breakpoints
+$mediumScreen: 1500px;
 $smallScreen: 1100px;
 $tablet: 950px;
 $mobile: 700px;
@@ -55,6 +56,7 @@ $lineHeightTitle: 1;
 $letterSpacing: 1px;
 $letterSpacingLarge: 3px;
 $letterSpacingHuge: 6px;
+$letterSpacingNavTitle: 1px;
 
 @mixin pad($x, $y) {
   padding-left: $x * $space;
@@ -106,53 +108,73 @@ a {
   left: $spaceBorder;
   user-select: none;
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
   z-index: $indexNav;
 
-  .nav__title {
-    font-size: $fontSizeHuge;
-    letter-spacing: $letterSpacingHuge;
-    text-decoration: underline;
-    //border-bottom: $border;
+  .nav__inner {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 
-    &:hover {
-      text-decoration: underline;
+    .nav__title {
+      font-size: $fontSizeHuge;
+      letter-spacing: $letterSpacingNavTitle;
+      //white-space: nowrap;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .nav__item {
+      cursor: pointer;
+      letter-spacing: $letterSpacingLarge;
+      font-size: $fontSizeMedium;
+      @include pad(0, 0.25);
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.active {
+        text-decoration: underline;
+      }
     }
   }
 
-  .nav__item {
-    cursor: pointer;
-    letter-spacing: $letterSpacingLarge;
-    font-size: $fontSizeMedium;
-    @include pad(0, 0.25);
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &.active {
-      text-decoration: underline;
-    }
+  &.nav--page {
+    left: 0;
+    width: 30.5%;
+    justify-content: center;
   }
 
   &.nav--index {
-    align-items: flex-end;
     top: 50%;
     transform: translateY(-50%) rotate($rotation);
     right: 65vw;
     left: auto;
 
-    .nav__item {
-      @include pad(1, 0.25);
-      margin-top: 0.25 * $space;
-      margin-bottom: 0.25 * $space;
-      font-size: $fontSizeHuge;
+    .nav__inner {
+      align-items: flex-end;
+
+      .nav__item {
+        @include pad(1, 0.25);
+        margin-top: 0.25 * $space;
+        margin-bottom: 0.25 * $space;
+        font-size: $fontSizeHuge;
+        text-shadow: 1.5px 1.5px $black;
+      }
     }
   }
 
   &.nav--hide {
     display: none;
+  }
+
+  @media screen and (max-width: $mediumScreen) {
+    &.nav--page {
+      left: $spaceBorder;
+      justify-content: flex-start;
+    }
   }
 
   @media screen and (max-width: $tablet) {
@@ -165,8 +187,10 @@ a {
       right: auto;
       transform: translate(-50%, -50%) rotate($rotation);
 
-      .nav__item {
-        font-size: $fontSizeLarge;
+      .nav__inner {
+        .nav__item {
+          font-size: $fontSizeLarge;
+        }
       }
     }
   }
@@ -222,8 +246,7 @@ a {
   //right: $spaceBorderMobile;
   top: 0;
   right: 0;
-  padding-top: $spaceBorderMobile;
-  padding-right: $spaceBorderMobile;
+  padding: $spaceBorderMobile;
   position: fixed;
   z-index: $indexMobileNavButton;
 
@@ -399,6 +422,10 @@ a {
   padding-right: $spaceBorder;
   padding-bottom: $spaceBorder * 2;
 
+  &.grid--alt {
+    min-height: auto;
+  }
+
   .grid__inner {
     display: flex;
     justify-content: space-between;
@@ -436,8 +463,8 @@ a {
             //transition: $transition;
             pointer-events: none;
             display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
+            justify-content: center;
+            align-items: center;
             border: $border;
             z-index: 1;
 
@@ -472,8 +499,10 @@ a {
               }
             }
           }
+        }
 
-          &:hover {
+        &:hover, &:active, &.active {
+          a {
             .grid__item-overlay {
               opacity: 1;
             }
@@ -487,11 +516,37 @@ a {
     }
   }
 
+  &.grid--collections {
+    .grid__inner {
+      .grid__column {
+        width: 50%;
+
+        .grid__item {
+          height: 100vh;
+          background: $colourBackground;
+
+          a .grid__item-overlay .grid__item-text .grid__item-title {
+            font-size: ($fontSizeHuge + $fontSizeLarge) / 2.5;
+          }
+        }
+        .grid__item.grid__item--double {
+          display: block;
+        }
+        .grid__item.grid__item--triple {
+          display: none;
+        }
+        &:nth-of-type(3) {
+          display: none;
+        }
+      }
+    }
+  }
+
   @media screen and (max-width: $tablet) {
     padding-right: 0;
     padding-bottom: 0;
 
-    .grid__inner {
+    .grid__inner{
       width: 100%;
 
       .grid__column {
@@ -511,15 +566,39 @@ a {
         }
       }
     }
+
+    &.grid--collections .grid__inner {
+      .grid__column {
+        width: 100%;
+
+        .grid__item {
+          height: 100vh;
+          padding: $space;
+        }
+        .grid__item.grid__item--single {
+          display: block;
+        }
+        .grid__item.grid__item--double {
+          display: none;
+        }
+        &:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: $mobile) {
-    .grid__inner {
+    .grid__inner, &.grid--collections .grid__inner {
       width: 100%;
 
       .grid__column {
         width: 100%;
 
+        .grid__item {
+          height: 500px;
+          padding: 0;
+        }
         .grid__item.grid__item--single {
           display: block;
         }
@@ -595,10 +674,10 @@ a {
     height: 50vh;
     width: auto;
     object-fit: contain;
-    animation-name: logo;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    //animation-name: logo;
+    //animation-duration: 1s;
+    //animation-iteration-count: infinite;
+    //animation-direction: alternate;
   }
 }
 
@@ -1188,6 +1267,43 @@ a {
     input[type=submit] {
       width: auto;
     }
+  }
+}
+
+.custom-made {
+  width: 100%;
+
+  .custom-made__title {
+    font-size: $fontSizeLarge;
+    font-family: $fontStackTitle;
+    line-height: $lineHeightTitle;
+  }
+
+  .custom-made__description {
+    margin-top: $space * 2;
+    margin-bottom: $space * 2;
+
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .custom-made__link {
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    margin-top: $space * 4;
+    padding: $spaceBorderMobile;
+    text-align: center;
   }
 }
 
