@@ -4,9 +4,11 @@ $black: #101820;
 $grey: #888;
 $colour: #d6001c;
 $colourHover: #fff;
-$colourBackground: #E6BEDD;
+$colourBackground: #e6bedd;
 $colourMobileNavBackground: rgba($black, 0.85);
 $colourOverlay: rgba($colourBackground, 0.75);
+$colourNav: #f6001f;
+$colourNavDropShadow: $black;
 
 // space
 $space: 8px;
@@ -26,6 +28,7 @@ $mediumScreen: 1500px;
 $smallScreen: 1100px;
 $tablet: 950px;
 $mobile: 700px;
+$mobilePortrait: 400px;
 
 // animation
 $transition: 0.35s;
@@ -35,4 +38,3 @@ $border: 1px solid $colour;
 $borderBlack: 1px solid $black;
 $borderGrey: 1px solid $grey;
 $borderSubtle: 1px solid rgba($black, 0.5);
-$rotation: 15deg;
