@@ -46,10 +46,11 @@
   }
 
   &.nav--index {
-    top: 50%;
-    transform: translateY(-50%) rotate($rotation);
-    right: 65vw;
+    top: 84%;
+    transform: translateY(-50%) rotate(-8deg);
+    right: 34vw;
     left: auto;
+    line-height: $lineHeightNav;
 
     .nav__inner {
       align-items: flex-end;
@@ -58,8 +59,9 @@
         @include pad(1, 0.25);
         margin-top: 0.25 * $space;
         margin-bottom: 0.25 * $space;
-        font-size: $fontSizeHuge;
-        text-shadow: 1.5px 1.5px $black;
+        font-size: $fontSizeNav;
+        text-shadow: 2px 2px 4px $colourNavDropShadow;
+        color: $colourNav;
       }
     }
   }
@@ -73,6 +75,10 @@
       left: $spaceBorder;
       justify-content: flex-start;
     }
+
+    &.nav--index {
+      right: 30vw;
+    }
   }
 
   @media screen and (max-width: $tablet) {
@@ -80,16 +86,25 @@
 
     &.nav--index {
       display: flex;
-      top: 50%;
-      left: 50%;
+      top: 38%;
+      left: 22%;
       right: auto;
-      transform: translate(-50%, -50%) rotate($rotation);
+      transform: translate(-50%, -50%) rotate(19deg);
 
       .nav__inner {
         .nav__item {
           font-size: $fontSizeLarge;
+          text-shadow: 1px 1px $colourNavDropShadow;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: $mobilePortrait) {
+    &.nav--index {
+      top: 39%;
+      left: 20%;
+      transform: translate(-50%, -50%) rotate(19deg) scale(0.6);
     }
   }
 }

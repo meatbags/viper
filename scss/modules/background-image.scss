@@ -22,7 +22,7 @@
       display: block;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $tablet) {
       display: none !important;
     }
   }
@@ -30,7 +30,7 @@
   .background-image__portrait {
     display: none;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $tablet) {
       &.active {
         display: block;
       }
