@@ -16,12 +16,6 @@
   }
 
   .background-image__landscape {
-    display: none;
-
-    &.active {
-      display: block;
-    }
-
     @media screen and (max-width: $tablet) {
       display: none !important;
     }
@@ -31,9 +25,7 @@
     display: none;
 
     @media screen and (max-width: $tablet) {
-      &.active {
-        display: block;
-      }
+      display: block;
     }
   }
 }

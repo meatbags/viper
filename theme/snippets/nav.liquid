@@ -1,6 +1,12 @@
 {% unless template == 'product' %}
   {% if template == 'index' %}
-  <div class='nav nav--index'>
+  <div class='nav nav--index'
+    data-rot='{{ settings.index_menu_rotation }}'
+    data-y='{{ settings.index_menu_position_y }}'
+    data-x='{{ settings.index_menu_position_x }}'
+    data-mobile-rot='{{ settings.index_menu_mobile_rotation }}'
+    data-mobile-y='{{ settings.index_menu_mobile_position_y }}'
+    data-mobile-x='{{ settings.index_menu_mobile_position_x }}' >
   {% else %}
   <div class='nav nav--page'>
   {% endif %}

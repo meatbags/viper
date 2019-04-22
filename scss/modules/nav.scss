@@ -46,10 +46,9 @@
   }
 
   &.nav--index {
-    top: 84%;
-    transform: translateY(-50%) rotate(-8deg);
-    right: 34vw;
-    left: auto;
+    top: 50%;
+    left: 50vw;
+    transform: translate(-50%, -50%) rotate(-8deg);
     line-height: $lineHeightNav;
 
     .nav__inner {
@@ -77,7 +76,7 @@
     }
 
     &.nav--index {
-      right: 30vw;
+      // right: 30vw;
     }
   }
 
@@ -86,10 +85,10 @@
 
     &.nav--index {
       display: flex;
-      top: 38%;
-      left: 22%;
-      right: auto;
-      transform: translate(-50%, -50%) rotate(19deg);
+      //top: 38%;
+      //left: 22%;
+      //right: auto;
+      //transform: translate(-50%, -50%) rotate(19deg);
 
       .nav__inner {
         .nav__item {
@@ -102,9 +101,9 @@
 
   @media screen and (max-width: $mobilePortrait) {
     &.nav--index {
-      top: 39%;
-      left: 20%;
-      transform: translate(-50%, -50%) rotate(19deg) scale(0.6);
+      //top: 39%;
+      //left: 20%;
+      //transform: translate(-50%, -50%) rotate(19deg) scale(0.6);
     }
   }
 }

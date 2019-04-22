@@ -7,34 +7,72 @@
     "theme_documentation_url": "https://github.com/meatbags/viper",
     "theme_support_url": "https://github.com/meatbags/viper"
   }, {
-    "name": "Index Images Landscape",
+    "name": "Index Landscape",
     "settings": [{
       "type": "image_picker",
-      "id": "index_image_1",
-      "label": "Index Image 1"
+      "id": "index_image",
+      "label": "Index Image"
     }, {
-      "type": "image_picker",
-      "id": "index_image_2",
-      "label": "Index Image 2"
+      "type": "range",
+      "id": "index_menu_position_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Menu Position Horizontal",
+      "default": 50
     }, {
-      "type": "image_picker",
-      "id": "index_image_3",
-      "label": "Index Image 3"
+      "type": "range",
+      "id": "index_menu_position_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Menu Position Vertical",
+      "default": 50
+    }, {
+      "type": "range",
+      "id": "index_menu_rotation",
+      "min": -90,
+      "max": 90,
+      "step": 2,
+      "unit": "deg",
+      "label": "Menu Rotation",
+      "default": 0
     }]
   }, {
-    "name": "Index Images Mobile",
+    "name": "Index Mobile",
     "settings": [{
       "type": "image_picker",
-      "id": "index_image_mobile_1",
-      "label": "Index Image Mobile 1"
+      "id": "index_image_mobile",
+      "label": "Index Image Mobile"
     }, {
-      "type": "image_picker",
-      "id": "index_image_mobile_2",
-      "label": "Index Image Mobile 2"
+      "type": "range",
+      "id": "index_menu_mobile_position_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Menu Position Horizontal",
+      "default": 50
     }, {
-      "type": "image_picker",
-      "id": "index_image_mobile_3",
-      "label": "Index Image Mobile 3"
+      "type": "range",
+      "id": "index_menu_mobile_position_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Menu Position Vertical",
+      "default": 50
+    }, {
+      "type": "range",
+      "id": "index_menu_mobile_rotation",
+      "min": -90,
+      "max": 90,
+      "step": 2,
+      "unit": "deg",
+      "label": "Menu Rotation",
+      "default": 0
     }]
   }
 ]

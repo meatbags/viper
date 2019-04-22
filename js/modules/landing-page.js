@@ -5,6 +5,7 @@ class LandingPage {
     this.target = document.querySelector('.landing-page');
     if (this.target) {
       // pick random index images
+      /*
       const landscape = document.querySelectorAll('.background-image__landscape');
       const portrait = document.querySelectorAll('.background-image__portrait');
       if (landscape.length) {
@@ -14,6 +15,22 @@ class LandingPage {
       if (portrait.length) {
         const index = Math.floor(Math.random() * portrait.length);
         portrait[index].classList.add('active');
+      }
+      */
+
+      // rotate menus
+      const nav = document.querySelector('.nav--index');
+      const breakpoint = {
+        medium: 1500,
+        tablet: 950,
+        mobilePortrait: 400,
+      };
+      if (nav) {
+        const resize = () => {
+
+        };
+        resize();
+        window.addEventListener('resize', () => { resize(); });
       }
 
       // bind landing page
