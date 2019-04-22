@@ -59,7 +59,7 @@
         margin-top: 0.25 * $space;
         margin-bottom: 0.25 * $space;
         font-size: $fontSizeNav;
-        text-shadow: 2px 2px 4px $colourNavDropShadow;
+        //text-shadow: 2px 2px 4px $colourNavDropShadow;
         color: $colourNav;
       }
     }
@@ -93,7 +93,7 @@
       .nav__inner {
         .nav__item {
           font-size: $fontSizeLarge;
-          text-shadow: 1px 1px $colourNavDropShadow;
+          //text-shadow: 1px 1px $colourNavDropShadow;
         }
       }
     }

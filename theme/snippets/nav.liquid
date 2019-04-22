@@ -4,6 +4,7 @@
     data-rot='{{ settings.index_menu_rotation }}'
     data-y='{{ settings.index_menu_position_y }}'
     data-x='{{ settings.index_menu_position_x }}'
+    data-scale='{{ settings.index_menu_scale }}'
     data-mrot='{{ settings.index_menu_mobile_rotation }}'
     data-my='{{ settings.index_menu_mobile_position_y }}'
     data-mx='{{ settings.index_menu_mobile_position_x }}'
@@ -19,7 +20,7 @@
       <div class='nav__item'><a href="/pages/about">About</a></div>
       <div class='nav__item'><a href="/collections">Collections</a></div>
       <div class='nav__item'><a href="/pages/contact">Contact</a></div>
-      {% unless cart.item_count == 0 %}
+      {% unless cart.item_count == 0 or template == 'index' %}
       <div class='nav__item'><a href='/cart'>Bag ({{ cart.item_count }})</a></div>
       {% endunless %}
     </div>

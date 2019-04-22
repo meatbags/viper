@@ -35,7 +35,7 @@ class LandingPage {
           const x = parseFloat(rinse(w > breakpoint.tablet ? nav.dataset['x'] : nav.dataset['mx']));
           const y = parseFloat(rinse(w > breakpoint.tablet ? nav.dataset['y'] : nav.dataset['my']));
           const rot = parseFloat(rinse(w > breakpoint.tablet ? nav.dataset['rot'] : nav.dataset['mrot']));
-          const scale = parseFloat(rinse(w > breakpoint.tablet ? '100.0' : nav.dataset['mscale']));
+          const scale = parseFloat(rinse(w > breakpoint.tablet ? nav.dataset['scale'] : nav.dataset['mscale']));
           if (!isNaN(x) && !isNaN(y) && !isNaN(rot) && !isNaN(scale)) {
             const left = w * (x / 100) + 'px';
             const top = h * (y / 100) + 'px';
@@ -66,7 +66,10 @@ class LandingPage {
       // rm loading screen
       const loadingScreen = document.querySelector('.loading-screen');
       if (loadingScreen) {
-        loadingScreen.parentNode.removeChild(loadingScreen);
+        loadingScreen.classList.add('active');
+        setTimeout(() => {
+          loadingScreen.parentNode.removeChild(loadingScreen);
+        }, 500);
       }
     }
   }

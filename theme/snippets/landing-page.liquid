@@ -1,7 +1,4 @@
 <div class='landing-page'>
-  <div class='ladning-page__logo'>
-    {{ 'LilithViperVLogoSnakeWhite.png' | file_url | img_tag }}
-  </div>
   <img
     class='landing-page__landscape'
     src='{{ settings.landing_image | img_url: "master" }}'
@@ -10,4 +7,7 @@
     class='landing-page__portrait'
     src='{{ settings.landing_image_mobile | img_url: "master" }}'
     alt='Lilith Viper'/>
+  <div class='landing-page__logo'>
+    {{ 'LilithViperVLogoSnakeWhite.png' | file_url | img_tag }}
+  </div>
 </div>

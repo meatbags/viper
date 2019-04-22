@@ -5,11 +5,17 @@
   width: 100vw;
   height: 100vh;
   z-index: $indexLoadingScreen;
-  background: $black;
+  background: $white;
   user-select: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.5;
+  opacity: 1;
+  transition: 0.5s;
+  pointer-events: none;
+
+  &.active {
+    opacity: 0;
+  }
 }

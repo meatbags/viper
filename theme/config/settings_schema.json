@@ -27,6 +27,11 @@
       "id": "index_menu_rotation",
       "label": "Menu Rotation (degrees)",
       "default": "0"
+    }, {
+      "type": "text",
+      "id": "index_menu_scale",
+      "label": "Scale Menu %",
+      "default": "100"
     }]
   }, {
     "name": "Index Mobile",
