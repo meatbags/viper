@@ -13,32 +13,20 @@
       "id": "index_image",
       "label": "Index Image"
     }, {
-      "type": "range",
+      "type": "text",
       "id": "index_menu_position_x",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "%",
-      "label": "Menu Position Horizontal",
-      "default": 50
+      "label": "Menu Position Horizontal %",
+      "default": "50"
     }, {
-      "type": "range",
+      "type": "text",
       "id": "index_menu_position_y",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "%",
-      "label": "Menu Position Vertical",
-      "default": 50
+      "label": "Menu Position Vertical %",
+      "default": "50"
     }, {
-      "type": "range",
+      "type": "text",
       "id": "index_menu_rotation",
-      "min": -90,
-      "max": 90,
-      "step": 2,
-      "unit": "deg",
-      "label": "Menu Rotation",
-      "default": 0
+      "label": "Menu Rotation (degrees)",
+      "default": "0"
     }]
   }, {
     "name": "Index Mobile",
@@ -47,32 +35,36 @@
       "id": "index_image_mobile",
       "label": "Index Image Mobile"
     }, {
-      "type": "range",
+      "type": "text",
       "id": "index_menu_mobile_position_x",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "%",
-      "label": "Menu Position Horizontal",
-      "default": 50
+      "label": "Menu Position Horizontal %",
+      "default": "50"
     }, {
-      "type": "range",
+      "type": "text",
       "id": "index_menu_mobile_position_y",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "%",
-      "label": "Menu Position Vertical",
-      "default": 50
+      "label": "Menu Position Vertical %",
+      "default": "50"
     }, {
-      "type": "range",
+      "type": "text",
       "id": "index_menu_mobile_rotation",
-      "min": -90,
-      "max": 90,
-      "step": 2,
-      "unit": "deg",
-      "label": "Menu Rotation",
-      "default": 0
+      "label": "Menu Rotation (degrees)",
+      "default": "0"
+    }, {
+      "type": "text",
+      "id": "index_menu_mobile_scale",
+      "label": "Scale Mobile Menu %",
+      "default": "60"
     }]
+  }, {
+    "name": "Landing Page",
+    "settings": [{
+      "type": "image_picker",
+      "id": "landing_image",
+      "label": "Landing Page Image Landscape"
+    }, {
+      "type": "image_picker",
+      "id": "landing_image_mobile",
+      "label": "Landing Page Image Mobile"
+    } ]
   }
 ]

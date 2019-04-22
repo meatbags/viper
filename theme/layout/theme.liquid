@@ -20,9 +20,7 @@
 <body>
   {% if template == 'index' %}
     <div class='loading-screen'></div>
-    <div class='landing-page'>
-      {{ 'LilithViperVLogoSnake.png' | file_url | img_tag }}
-    </div>
+    {% include 'landing-page' %}
   {% endif %}
 
   {% include 'nav' %}

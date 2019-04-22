@@ -48,7 +48,7 @@
   &.nav--index {
     top: 50%;
     left: 50vw;
-    transform: translate(-50%, -50%) rotate(-8deg);
+    transform: translate(-50%, -50%);
     line-height: $lineHeightNav;
 
     .nav__inner {
