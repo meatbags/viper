@@ -12,116 +12,87 @@
 
   .grid__inner {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     width: 68%;
     user-select: none;
 
-    .grid__column {
-      width: 33.333%;
+    .grid__item {
+      width: 33.3333%;
+      height: 32vw;
+      background: $colour;
 
-      .grid__item {
+      a {
+        position: relative;
+        display: flex;
         width: 100%;
-        height: 32vw;
-        background: $colour;
+        height: 100%;
 
-        a {
-          position: relative;
-          display: flex;
+        img {
           width: 100%;
           height: 100%;
+          object-fit: cover;
+        }
 
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .grid__item-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: $colourOverlay;
+          opacity: 0;
+          transition: $transition;
+          pointer-events: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: $border;
+          z-index: 1;
+
+          .grid__item-text {
+            @include pad(2, 2);
+            text-align: center;
+            line-height: $lineHeightTitle;
+
+            .grid__item-title {
+              font-family: $fontStackTitle;
+              font-size: $fontSizeMedium;
+              margin-bottom: $space / 2;
+            }
+
+            .grid__item-price {
+              font-size: $fontSize;
+            }
           }
 
-          .grid__item-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: $colourOverlay;
-            opacity: 0;
-            transition: $transition;
-            pointer-events: none;
-            display: flex;
+          @media screen and (max-width: $tablet) {
             justify-content: center;
             align-items: center;
-            border: $border;
-            z-index: 1;
 
             .grid__item-text {
-              @include pad(2, 2);
-              text-align: center;
-              line-height: $lineHeightTitle;
-
               .grid__item-title {
-                font-family: $fontStackTitle;
-                font-size: $fontSizeMedium;
-                margin-bottom: $space / 2;
+                font-size: $fontSizeLarge;
               }
 
               .grid__item-price {
-                font-size: $fontSize;
-              }
-            }
-
-            @media screen and (max-width: $tablet) {
-              justify-content: center;
-              align-items: center;
-
-              .grid__item-text {
-                .grid__item-title {
-                  font-size: $fontSizeLarge;
-                }
-
-                .grid__item-price {
-                  font-size: $fontSizeMedium;
-                }
+                font-size: $fontSizeMedium;
               }
             }
           }
-        }
-
-        &:hover, &:active, &.active {
-          a {
-            .grid__item-overlay {
-              opacity: 1;
-            }
-          }
-        }
-
-        &.grid__item--double, &.grid__item--single {
-          display: none;
         }
       }
-    }
-  }
 
-  &.grid--collections {
-    .grid__inner {
-      .grid__column {
-        width: 50%;
-
-        .grid__item {
-          height: 100vh;
-          background: $colourBackground;
-
-          a .grid__item-overlay .grid__item-text .grid__item-title {
-            font-size: ($fontSizeHuge + $fontSizeLarge) / 2.5;
+      &:hover, &:active, &.active {
+        a {
+          .grid__item-overlay {
+            opacity: 1;
           }
         }
-        .grid__item.grid__item--double {
-          display: block;
-        }
-        .grid__item.grid__item--triple {
-          display: none;
-        }
-        &:nth-of-type(3) {
-          display: none;
-        }
+      }
+
+      &.grid__item--double, &.grid__item--single {
+        display: none;
       }
     }
   }
@@ -133,65 +104,21 @@
     .grid__inner{
       width: 100%;
 
-      .grid__column {
+      .grid__item {
         width: 50%;
-
-        .grid__item {
-          height: 500px;
-        }
-        .grid__item.grid__item--double {
-          display: block;
-        }
-        .grid__item.grid__item--triple {
-          display: none;
-        }
-        &:nth-of-type(3) {
-          display: none;
-        }
-      }
-    }
-
-    &.grid--collections .grid__inner {
-      .grid__column {
-        width: 100%;
-
-        .grid__item {
-          height: 100vh;
-          padding: $space;
-        }
-        .grid__item.grid__item--single {
-          display: block;
-        }
-        .grid__item.grid__item--double {
-          display: none;
-        }
-        &:nth-of-type(2) {
-          display: none;
-        }
+        height: 500px;
       }
     }
   }
 
   @media screen and (max-width: $mobile) {
-    .grid__inner, &.grid--collections .grid__inner {
+    .grid__inner {
       width: 100%;
 
-      .grid__column {
+      .grid__item {
         width: 100%;
-
-        .grid__item {
-          height: 500px;
-          padding: 0;
-        }
-        .grid__item.grid__item--single {
-          display: block;
-        }
-        .grid__item.grid__item--double {
-          display: none;
-        }
-        &:nth-of-type(2) {
-          display: none;
-        }
+        height: 500px;
+        padding: 0;
       }
     }
   }

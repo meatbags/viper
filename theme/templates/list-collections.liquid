@@ -1,2 +1,30 @@
-{% assign itemArray = collections %}
-{% include 'collection-grid' %}
+<div class='grid grid--collections'>
+  <div class='grid__inner'>
+    <div class='article'>
+      {% for article in blogs.editorials.articles %}
+        <div class='article__excerpt'>
+          <div class='swiper-excerpt__inner'>
+            <div class='swiper-excerpt__title'>{{ article.title }}</div>
+            {{ article.excerpt }}
+          </div>
+        </div>
+        {{ article.content }}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class='swiper-container'>
+  <div class='swiper-wrapper'></div>
+  <div class='swiper-excerpt'></div>
+  <div class='swiper__arrow-next'>
+    <div class='swiper__arrow-inner'></div>
+  </div>
+  <div class='swiper__arrow-prev'>
+    <div class='swiper__arrow-inner'></div>
+  </div>
+  <div class='swiper-close'>
+    <div class='swiper-close__inner'></div>
+    <div class='swiper-close__inner'></div>
+  </div>
+</div>
