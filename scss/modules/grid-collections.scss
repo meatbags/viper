@@ -1,42 +1,36 @@
 .grid--collections {
   .grid__inner {
-    display: none;
-
     .grid__item {
-      cursor: zoom-in;
-      position: relative;
+      width: 50%;
+      height: 100vh;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .grid__item-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        //background: rgba($colourOverlay, 0.25);
-        opacity: 0;
-        //transition: $transition;
-        pointer-events: none;
-        border: $border;
-        z-index: 1;
-      }
-
-      &:hover {
+      a {
         .grid__item-overlay {
-          opacity: 1;
+          .grid__item-text {
+            .grid__item-title {
+              font-size: $fontSizeLarge;
+            }
+          }
         }
       }
     }
   }
 
-  &.active {
+  @media screen and (max-width: $tablet) {
     .grid__inner {
-      display: flex;
+      .grid__item {
+        width: 100%;
+
+        a .grid__item-overlay .grid__item-text .grid__item-title {
+          font-size: $fontSizeHuge;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    a .grid__item-overlay .grid__item-text .grid__item-title {
+      font-size: $fontSizeMedium;
     }
   }
 }

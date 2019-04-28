@@ -1,41 +1,30 @@
-{% assign number_of_comments = article.comments_count %}
-{% if comment and comment.created_at %}
-  {% assign number_of_comments = article.comments_count %}
-{% endif %}
-
-<h1>{{ article.title }}</h1>
-{% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
-{% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %}
-{{ article.author }} @ {{ article.created_at }}
-
-<div>{{ article.content }}</div>
-{% if blog.comments_enabled? %}
-  <h2>{{ number_of_comments }} comments</h2>
-  {% paginate article.comments by 5 %}
-    {% for comment in article.comments %}
-      <div>
-        <div>{{ comment.content }}</div>
-        {{ comment.author }} @ {{ comment.created_at }}
+{% comment %} Editorial grid {% endcomment %}
+<div class='grid grid--article'>
+  <div class='grid__inner'>
+    <div class='article'>
+      <div class='article__excerpt'>
+        <div class='swiper-excerpt__inner'>
+          <div class='swiper-excerpt__title'>{{ article.title }}</div>
+          <div class='swiper-excerpt__content'>{{ article.excerpt }}</div>
+        </div>
       </div>
-    {% endfor %}
-    {% if paginate.pages > 1 %}
-      {{ paginate | default_pagination }}
-    {% endif %}
-  {% endpaginate %}
-
-  <div>
-    {% form 'new_comment', article %}
-      {{ form.errors | default_errors }}
-      <label for="CommentAuthor">name</label>
-      <input type="text" name="comment[author]" id="CommentAuthor" placeholder="name" value="{{ form.author }}" autocapitalize="words">
-
-      <label for="CommentEmail">email</label>
-      <input type="email" name="comment[email]" id="CommentEmail" placeholder="email" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
-
-      <label for="CommentBody">message</label>
-      <textarea name="comment[body]" id="CommentBody" placeholder="message">{{ form.body }}</textarea>
-
-      <input type="submit" value="post">
-    {% endform %}
+      {{ article.content }}
+    </div>
   </div>
-{% endif %}
+</div>
+
+{% comment %} Swiper {% endcomment %}
+<div class='swiper-container'>
+  <div class='swiper-wrapper'></div>
+  <div class='swiper-excerpt'></div>
+  <div class='swiper__arrow-next'>
+    <div class='swiper__arrow-inner'></div>
+  </div>
+  <div class='swiper__arrow-prev'>
+    <div class='swiper__arrow-inner'></div>
+  </div>
+  <div class='swiper-close'>
+    <div class='swiper-close__inner'></div>
+    <div class='swiper-close__inner'></div>
+  </div>
+</div>

@@ -105,7 +105,7 @@ $letterSpacingNavTitle: 1px;
 
     .swiper-slide {
       @include pad(2, 2);
-      //width: 100%;
+      width: 100%;
       height: 100%;
       display: flex;
       justify-content: center;
@@ -113,7 +113,7 @@ $letterSpacingNavTitle: 1px;
       cursor: grab;
 
       img {
-        //width: 100%;
+        width: 100%;
         height: 100%;
         object-fit: contain;
       }
@@ -121,20 +121,17 @@ $letterSpacingNavTitle: 1px;
   }
 
   .swiper-excerpt {
-    left: 0;
+    left: $spaceBorder;
     bottom: $spaceBorder;
     position: absolute;
-    width: 30.5%;
+    width: 33.33%;
     z-index: 5;
-    justify-content: center;
-    display: flex;
     user-select: none;
 
     .swiper-excerpt__inner {
       display: flex;
       align-items: flex-start;
       flex-direction: column;
-      background: rgba(lighten($colourBackground, 0%), 0.7);
       @include pad(1, 0.5);
       padding-top: 0;
       transform: scale(0.9);
@@ -147,14 +144,17 @@ $letterSpacingNavTitle: 1px;
         text-decoration: underline;
       }
 
-      p {
-        margin: 0;
-        padding: 0;
+      .swiper-excerpt__content {
         font-family: $fontStackTitle;
         letter-spacing: $letterSpacingLarge;
         font-size: $fontSizeMedium;
         line-height: 1;
-        @include pad(0, 0.25);
+
+        p {
+          margin: 0;
+          padding: 0;
+          @include pad(0, 0.25);
+        }
       }
     }
   }
@@ -164,8 +164,8 @@ $letterSpacingNavTitle: 1px;
     height: 50px;
     padding: $space;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: $space;
+    right: $space;
     z-index: 10;
     cursor: pointer;
     display: flex;
@@ -207,7 +207,6 @@ $letterSpacingNavTitle: 1px;
       height: 100%;
       border-left: $border;
       border-top: $border;
-    //  border-width: 2px;
       transform: rotate(-45deg);
     }
 
@@ -217,7 +216,7 @@ $letterSpacingNavTitle: 1px;
   }
 
   .swiper__arrow-next {
-    right: 10px;
+    right: $space;
     left: auto;
 
     .swiper__arrow-inner {
@@ -226,7 +225,7 @@ $letterSpacingNavTitle: 1px;
   }
 
   .swiper__arrow-prev {
-    left: 10px;
+    left: $space;
     right: auto;
   }
 
@@ -241,6 +240,24 @@ $letterSpacingNavTitle: 1px;
 
     .swiper-excerpt {
       display: none;
+    }
+
+    .swiper-close {
+      top: $space / 2;
+      right: $space / 2;
+    }
+
+    .swiper__arrow-next, .swiper__arrow-prev {
+      top: auto;
+      bottom: $space / 2;
+    }
+
+    .swiper__arrow-prev {
+      left: $space / 2;
+    }
+
+    .swiper__arrow-next {
+      right: $space / 2;
     }
   }
 }
@@ -735,6 +752,43 @@ a {
 }
 
 .grid--collections {
+  .grid__inner {
+    .grid__item {
+      width: 50%;
+      height: 100vh;
+
+      a {
+        .grid__item-overlay {
+          .grid__item-text {
+            .grid__item-title {
+              font-size: $fontSizeLarge;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    .grid__inner {
+      .grid__item {
+        width: 100%;
+
+        a .grid__item-overlay .grid__item-text .grid__item-title {
+          font-size: $fontSizeHuge;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    a .grid__item-overlay .grid__item-text .grid__item-title {
+      font-size: $fontSizeMedium;
+    }
+  }
+}
+
+.grid--article {
   .grid__inner {
     display: none;
 
@@ -1526,6 +1580,10 @@ a {
     padding: $spaceBorderMobile;
     text-align: center;
   }
+}
+
+.afterpay-paragraph {
+  //font-size: $fontSizeSmall;
 }
 
 
