@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <!-- website by xavierburrow.com -->
-<head>
-  {% unless template == 'index' %}
-    <title>Lilith Viper - {{ page_title }}</title>
-  {% else %}
-    <title>Lilith Viper</title>
-  {% endunless %}
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="description" content="{{ page_description | escape }}">
-  <link rel="canonical" href="{{ canonical_url }}">
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  {{ content_for_header }} <!-- plugins -->
-  {{ 'fonts.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'application.js' | asset_url | script_tag }}
-  {{ 'swiper.min.js' | asset_url | script_tag }}
-  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0071/6495/2629/files/favicon.png?8921" />
-</head>
-<body>
-  {% if template == 'index' %}
-    <div class='loading-screen'></div>
-    {% include 'landing-page' %}
-  {% endif %}
-
-  {% include 'nav' %}
-
-  <div class='wrapper'>
-    {{ content_for_layout }}
-  </div>
-
-  {% include 'footer' %}
-</body>
+<html>
+  <head prefix="og: http://ogp.me/ns#">
+    {% unless template == 'index' %}
+      <title>Lilith Viper - {{ page_title }}</title>
+    {% else %}
+      <title>Lilith Viper</title>
+    {% endunless %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="{{ page_description | escape }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    {{ content_for_header }} <!-- plugins -->
+    {{ 'fonts.scss.css' | asset_url | stylesheet_tag }}
+    {{ 'application.scss.css' | asset_url | stylesheet_tag }}
+    {{ 'application.js' | asset_url | script_tag }}
+    {{ 'swiper.min.js' | asset_url | script_tag }}
+    {% include 'meta' %}
+    <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0071/6495/2629/files/favicon.png?8921" />
+  </head>
+  <body>
+    {% if template == 'index' %}
+      <div class='loading-screen'></div>
+      {% include 'landing-page' %}
+    {% endif %}
+    {% include 'nav' %}
+    <div class='wrapper'>
+      {{ content_for_layout }}
+    </div>
+    {% include 'footer' %}
+  </body>
 </html>

@@ -45,7 +45,7 @@
           {% for variant in product.variants %}
             {% if variant.available %}
               <option value="{{ variant.id }}">
-                {{ variant.title }} - {{ variant.price | money_without_trailing_zeros }}
+                {{ variant.title }} {% comment %}- {{ variant.price | money_without_trailing_zeros }}{% endcomment %}
               </option>
             {% else %}
               <option disabled="disabled">
