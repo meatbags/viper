@@ -1,0 +1,11 @@
+<div class='grid'>
+  <div class='grid__inner'>
+    {% for item in itemArray %}
+      {% assign itemTitle = item.title %}
+      {% assign itemURL = item.url %}
+      {% assign itemPrice = item.price %}
+      {% assign itemImage = item.featured_image.src | img_url: 'grande' %}
+      {% include 'product-grid-item' %}
+    {% endfor %}
+  </div>
+</div>

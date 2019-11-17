@@ -1,0 +1,75 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Lilith Viper",
+    "theme_version": "1.0.0",
+    "theme_author": "Xavier Burrow",
+    "theme_documentation_url": "https://github.com/meatbags/viper",
+    "theme_support_url": "https://github.com/meatbags/viper"
+  }, {
+    "name": "Index Landscape",
+    "settings": [{
+      "type": "image_picker",
+      "id": "index_image",
+      "label": "Index Image"
+    }, {
+      "type": "text",
+      "id": "index_menu_position_x",
+      "label": "Menu Position Horizontal %",
+      "default": "50"
+    }, {
+      "type": "text",
+      "id": "index_menu_position_y",
+      "label": "Menu Position Vertical %",
+      "default": "50"
+    }, {
+      "type": "text",
+      "id": "index_menu_rotation",
+      "label": "Menu Rotation (degrees)",
+      "default": "0"
+    }, {
+      "type": "text",
+      "id": "index_menu_scale",
+      "label": "Scale Menu %",
+      "default": "100"
+    }]
+  }, {
+    "name": "Index Mobile",
+    "settings": [{
+      "type": "image_picker",
+      "id": "index_image_mobile",
+      "label": "Index Image Mobile"
+    }, {
+      "type": "text",
+      "id": "index_menu_mobile_position_x",
+      "label": "Menu Position Horizontal %",
+      "default": "50"
+    }, {
+      "type": "text",
+      "id": "index_menu_mobile_position_y",
+      "label": "Menu Position Vertical %",
+      "default": "50"
+    }, {
+      "type": "text",
+      "id": "index_menu_mobile_rotation",
+      "label": "Menu Rotation (degrees)",
+      "default": "0"
+    }, {
+      "type": "text",
+      "id": "index_menu_mobile_scale",
+      "label": "Scale Mobile Menu %",
+      "default": "60"
+    }]
+  }, {
+    "name": "Landing Page",
+    "settings": [{
+      "type": "image_picker",
+      "id": "landing_image",
+      "label": "Landing Page Image Landscape"
+    }, {
+      "type": "image_picker",
+      "id": "landing_image_mobile",
+      "label": "Landing Page Image Mobile"
+    } ]
+  }
+]

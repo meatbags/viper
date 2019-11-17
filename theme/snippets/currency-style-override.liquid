@@ -1,0 +1,91 @@
+<style>
+  .pick_currency {
+    position: fixed;
+    top: 16px !important;
+    right: 16px !important;
+    background-color: #e6bedd !important;
+    width: 65px !important;
+    height: 30px !important;
+    padding: 0 !important;
+    z-index: 49 !important;
+  }
+  .pick_currency .fa {
+    width: 20px;
+    height: 28px;
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nice-select {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    line-height: 1 !important;
+    font-size: 16px !important;
+    transition: none !important;
+    display: flex !important;
+    background-color: transparent !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+  .nice-select .current {
+    width: 45px;
+    padding-left: 5px;
+    text-align: center !important;
+    background-color: transparent !important;
+  }
+  .nice-select .list {
+    background-color: #e6bedd !important;
+    width: 65px !important;
+    transition: none !important;
+    border-bottom: 1px solid #d6001c !important;
+  }
+  .nice-select .list .option {
+    width: 100% !important;
+    background-color: transparent !important;
+    transition: none !important;
+    text-align: left !important;
+    padding-left: 8px;
+  }
+  .nice-select .list .option:last-child {
+    border-bottom: none !important;
+  }
+  .nice-select .list .option.selected {
+    font-weight: normal !important;
+    background: #d6001c !important;
+    color: #e6bedd !important;
+  }
+  .mlvedaCartNote {
+    padding: 0 !important;
+  }
+  @media screen and (max-width: 950px) {
+    .pick_currency {
+      right: auto !important;
+      left: 16px !important;
+      background-color: transparent !important;
+    }
+    .pick_currency:hover {
+      background-color: transparent !important;
+    }
+    .nice-select .list {
+      background-color: transparent !important;
+    }
+    .nice-select .list .option {
+      background-color: transparent !important;
+    }
+    [data-page="product"] .pick_currency {
+      left: auto !important;
+      right: 64px !important;
+    }
+    [data-page="cart"] .pick_currency {
+      background-color: #e6bedd !important;
+    }
+    [data-page="product"] .nice-select .list, [data-page="cart"] .nice-select .list {
+      background-color: #e6bedd !important;
+    }
+  }
+</style>

@@ -1,0 +1,12 @@
+<div class='grid grid--collections'>
+  <div class='grid__inner'>
+    {% for item in itemArray %}
+      {% unless item.title == 'All' %}
+        {% assign itemTitle = item.title %}
+        {% assign itemURL = item.url %}
+        {% assign itemImage = item.image.src | img_url: 'master' %}
+        {% include 'product-grid-item' %}
+      {% endunless %}
+    {% endfor %}
+  </div>
+</div>

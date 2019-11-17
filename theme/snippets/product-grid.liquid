@@ -4,7 +4,7 @@
       {% assign itemTitle = item.title %}
       {% assign itemURL = item.url %}
       {% assign itemPrice = item.price %}
-      {% assign itemImage = item.featured_image.src | img_url: 'grande' %}
+      {% assign itemImage = item.featured_image.src | img_url: '600x' %}
       {% include 'product-grid-item' %}
     {% endfor %}
   </div>

@@ -39,6 +39,12 @@
           <button type="submit" name="checkout">Checkout</button>
         </div>
       </form>
+      {% if settings.mlvedaACS_isMessageDisplay %}
+        <br />
+        <p class="mlvedaCartNote" style="display:none;text-align:left;padding:0 !important;">
+          {{ settings.mlvedaACS_messageContent | replace: "<<shop.name>>", shop.name | replace:"<<shop.currency>>",shop.currency|replace:"<<shop.selected_currency>>","<span class='selected-currency'></span>"}}
+        </p>
+      {% endif %}
     {% else %}
       <div class='cart__empty-msg'>
         Your bag is empty, continue shopping <a href='/pages/shop'>here.</a>

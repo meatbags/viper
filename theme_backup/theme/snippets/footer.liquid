@@ -1,0 +1,39 @@
+{% unless template == 'index' %}
+  <div class='footer footer--fixed'>
+    <div class='footer__row footer__row--justify-end'>
+      <div class='footer__back-button'>
+        <a href='/#index'>
+          {{ 'lilith-viper-red-snake.png' | file_url | img_tag }}
+        </a>
+      </div>
+    </div>
+    <div class='footer__row'>
+      <div class='footer__section'>
+        <!--<div class='footer__item'><a href='/pages/customer-care'>Customer Care</a></div>.-->
+        <div class='footer__item'><a href='/pages/terms-conditions'>Terms & Conditions</a></div>
+        <!--<div class='footer__item'><a href='/pages/newsletter'>Newsletter</a></div>-->
+      </div>
+      <div class='footer__section'>
+        <div class='footer__item'><a href='https://www.instagram.com/lilithviper/' target='_blank'>Instagram</a></div>.
+        <div class='footer__item'><a href='https://www.facebook.com/lilithviper.x/' target='_blank'>Facebook</a></div>
+      </div>
+    </div>
+  </div>
+  <div class='mobile-footer'>
+    <div class='mobile-footer__section'>
+      <!--<div class='mobile-footer__item'><a href='/pages/newsletter'>Newsletter</a></div>-->
+      <!--<div class='mobile-footer__item'><a href='/pages/customer-care'>Customer Care</a></div>-->
+      <div class='mobile-footer__item'><a href='/pages/terms-conditions'>Terms & Conditions</a></div>
+      <div class='mobile-footer__item'><a href='https://www.instagram.com/lilithviper/' target='_blank'>Instagram</a> / <a href='https://www.facebook.com/lilithviper.x/' target='_blank'>Facebook</a></div>
+      <div class='mobile-footer__item'>&copy; Lilith Viper {{ 'now' | date: "%Y" }}</div>
+      <div class='mobile-footer__logo'>
+        {{ 'LilithViperVLogoSnakeRed.png' | file_url | img_tag }}
+      </div>
+    </div>
+  </div>
+{% endunless %}
+
+{% comment %}
+  {% unless template == 'list-collections' or template == 'page.shop' or template == 'cart' or template == 'collection' %}
+  {% endunless %}
+{% endcomment %}

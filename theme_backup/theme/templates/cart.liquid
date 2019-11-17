@@ -1,0 +1,48 @@
+<div class='cart'>
+  <div class='cart__inner'>
+    <!--<div class='cart__title'>My Bag</div>-->
+    {% if cart.item_count > 0 %}
+      <form action="/cart" method="post" novalidate>
+        {% for item in cart.items %}
+          <div class='cart__item'>
+            <div class='cart__item-image'>
+              <a href="{{ item.url | within: collections.all }}">
+                <img src="{{ item | img_url: 'large' }}" alt="{{ item.title | escape }}">
+              </a>
+            </div>
+            <div class='cart__item-info'>
+              <div class='cart__item-title'>
+                <a href="{{ item.url }}">{{ item.product.title }}</a>
+              </div>
+              {% comment %}<div class='cart__item-variant'></div>{% endcomment %}
+              <div class='cart__item-price'>
+                ({{ item.variant.title }})
+                <span class='cart__item-individual-price'>{{ item.price | money }}</span>&nbsp;x
+                <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">
+              </div>
+              <div class='cart__item-total-price'>
+                {% if item.original_line_price != item.line_price %}
+                  {{ item.original_line_price | money }}
+                {% endif %}
+                Total: {{ item.line_price | money }}
+                {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
+              </div>
+              <div class='cart__item-remove'>
+                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">Remove &times;</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <div class='cart__checkout'>
+          <p class='cart__checkout-sub-total'>Sub Total: {{ cart.total_price | money }}</p>
+          <button type="submit" name="update">Update</button>
+          <button type="submit" name="checkout">Checkout</button>
+        </div>
+      </form>
+    {% else %}
+      <div class='cart__empty-msg'>
+        Your bag is empty, continue shopping <a href='/pages/shop'>here.</a>
+      </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,9 @@
+{% unless template == 'product' %}
+  <div class='back-button back-button--index'>
+    <a href='/#index'>Home</a>
+  </div>
+{% else %}
+  <div class='back-button'>
+    <a href='javascript:history.back()'>&larr;Back</a>
+  </div>
+{% endunless %}

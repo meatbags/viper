@@ -1,0 +1,13 @@
+<div class='grid__item {{ itemClass }}'>
+  <a href='{{ itemURL }}'>
+    <img src='{{ itemImage }}' alt='{{ itemTitle }}'>
+    <div class='grid__item-overlay'>
+      <div class='grid__item-text'>
+        <div class='grid__item-title'>{{ itemTitle }}</div>
+        {% if itemPrice %}
+          <div class='grid__item-price'>{{ itemPrice | money_without_trailing_zeros }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>
